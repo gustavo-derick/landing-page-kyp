@@ -1,0 +1,74 @@
+{
+  "name": "Kyp — Form Contact → ClickUp CRM",
+  "nodes": [
+    {
+      "id": "a1b2c3d4-0001",
+      "name": "Receber Formulário",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [250, 300],
+      "webhookId": "kyp-contact-form",
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "kyp-contact",
+        "responseMode": "onReceived",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      }
+    },
+    {
+      "id": "e5f6g7h8-0002",
+      "name": "Montar Payload",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [500, 300],
+      "parameters": {
+        "jsCode": "const b = $input.first().json.body;\n\nreturn [{\n  json: {\n    name: `${b.nome} ${b.sobrenome} — ${b.empresa}`,\n    description: [\n      `**Nome:** ${b.nome} ${b.sobrenome}`,\n      `**Empresa:** ${b.empresa}`,\n      `**E-mail:** ${b.email}`,\n      `**WhatsApp / Tel:** ${b.whatsapp || '—'}`,\n      `**Como nos conheceu:** ${b.como_conheceu || '—'}`,\n      `**Mensagem:** ${b.mensagem || '—'}`,\n      '',\n      '_Enviado via formulário da landing page_'\n    ].join('\\n')\n  }\n}];"
+      }
+    },
+    {
+      "id": "i9j0k1l2-0003",
+      "name": "Criar Card no ClickUp",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [750, 300],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clickup.com/api/v2/list/901324048060/task",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "pk_254619517_0C3E7236Z3DAQX0OUG4KUX5CS45TGULN"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "body": "={{ JSON.stringify($json) }}"
+      }
+    }
+  ],
+  "connections": {
+    "Receber Formulário": {
+      "main": [
+        [{ "node": "Montar Payload", "type": "main", "index": 0 }]
+      ]
+    },
+    "Montar Payload": {
+      "main": [
+        [{ "node": "Criar Card no ClickUp", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
