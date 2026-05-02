@@ -2423,10 +2423,33 @@
     });
 
     /* Form */
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
       e.preventDefault();
-      document.getElementById('contactForm').style.display = 'none';
-      document.getElementById('formOk').style.display = 'block';
+      const form = document.getElementById('contactForm');
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        if (!res.ok) throw new Error('Erro ao enviar');
+
+        form.style.display = 'none';
+        document.getElementById('formOk').style.display = 'block';
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = originalText;
+        alert('Ocorreu um erro ao enviar. Tente novamente em instantes.');
+      }
     }
 
     /* Smooth scroll */

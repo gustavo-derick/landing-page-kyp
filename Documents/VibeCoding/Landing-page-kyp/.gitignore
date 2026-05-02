@@ -1,0 +1,8 @@
+# OS
+.DS_Store
+
+# Editor
+.claude/
+
+# References (not needed in production)
+Referências/
