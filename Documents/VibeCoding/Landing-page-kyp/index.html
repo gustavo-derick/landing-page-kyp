@@ -47,6 +47,12 @@
       line-height: 1.7;
       overflow-x: hidden;
       cursor: none;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    img,
+    video {
+      max-width: 100%;
     }
 
     /* Precision grid */
@@ -82,6 +88,12 @@
     .ticker-wrap {
       position: relative;
       z-index: 2;
+    }
+
+    section,
+    footer,
+    .hero-outer {
+      scroll-margin-top: 104px;
     }
 
     h1,
@@ -456,11 +468,6 @@
       will-change: transform;
     }
 
-    100% {
-      transform: scale(1.1);
-    }
-    }
-
     .hero-overlay {
       position: absolute;
       inset: 0;
@@ -606,7 +613,7 @@
 
     .hero-logo-img {
       height: 26px;
-      max-width: auto;
+      width: auto;
       object-fit: contain;
       filter: brightness(0) invert(1);
       opacity: 0.7;
@@ -1911,6 +1918,385 @@
     #problema>.wrap {
       position: relative;
       z-index: 2;
+    }
+
+    @media (max-width: 720px) {
+      body::before {
+        background-size: 36px 36px;
+      }
+
+      .section {
+        padding: 72px 18px;
+      }
+
+      section,
+      footer,
+      .hero-outer {
+        scroll-margin-top: 112px;
+      }
+
+      .wrap {
+        width: 100%;
+      }
+
+      #nav {
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+        transform: none;
+        padding: 10px 14px;
+        border-radius: 28px;
+      }
+
+      #nav.s {
+        top: 8px;
+        padding: 10px 14px;
+      }
+
+      .nav-left,
+      .nav-right {
+        gap: 14px;
+        min-width: 0;
+      }
+
+      .nav-w {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .logo-img {
+        height: 28px;
+      }
+
+      .nav-btn-w {
+        min-height: 42px;
+        padding: 10px 16px;
+        font-size: 0.84rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        max-width: calc(100vw - 118px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .hero-outer {
+        min-height: 100svh;
+        padding: 116px 18px 76px;
+      }
+
+      .hero-bg {
+        object-position: center top;
+      }
+
+      .hero-content {
+        max-width: 32rem;
+      }
+
+      .hero-h1 {
+        width: 100%;
+        max-width: 20rem;
+        font-size: 2rem;
+        line-height: 1.08;
+        letter-spacing: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+      }
+
+      .hero-h1 .line-rev {
+        display: block;
+        overflow: visible;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+
+      .hero-h1 .line-rev>span {
+        display: block;
+        max-width: 100%;
+        white-space: normal !important;
+      }
+
+      .hero-sub {
+        font-size: 1rem;
+        line-height: 1.55;
+        margin-bottom: 32px;
+      }
+
+      .btn,
+      .btn-w,
+      .f-btn {
+        min-height: 46px;
+        cursor: pointer;
+      }
+
+      .hero-logos-wrapper {
+        bottom: 20px;
+      }
+
+      .hero-powered-by {
+        font-size: 0.58rem;
+      }
+
+      .bento-header {
+        margin-bottom: 34px;
+      }
+
+      .bento-title {
+        font-size: 2rem;
+        letter-spacing: 0;
+      }
+
+      .bento-subtitle {
+        font-size: 1rem;
+        line-height: 1.62;
+      }
+
+      .bento-subtitle .highlight {
+        white-space: normal;
+      }
+
+      .bento-grid {
+        gap: 14px;
+      }
+
+      .bento-card {
+        min-height: 168px;
+        padding: 28px 22px;
+        border-radius: 14px;
+      }
+
+      .bento-card h3 {
+        font-size: 3.2rem;
+        top: 12px;
+        right: 18px;
+      }
+
+      .bento-card p {
+        font-size: 1rem;
+        line-height: 1.52;
+        margin-top: 46px;
+      }
+
+      #solucao {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      #solucao .wrap {
+        padding: 36px 18px;
+        border-radius: 18px;
+      }
+
+      .sol-grid {
+        gap: 18px;
+      }
+
+      .sol-card {
+        border-radius: 12px;
+      }
+
+      .sol-card-text {
+        padding: 26px 22px;
+      }
+
+      .sol-card-img-wrap {
+        height: 210px;
+      }
+
+      .prova-grid {
+        gap: 30px;
+        text-align: left;
+      }
+
+      .prova-text-col {
+        gap: 28px;
+      }
+
+      .stat-num {
+        font-size: 4.15rem;
+        letter-spacing: 0;
+      }
+
+      .stat-lbl {
+        line-height: 1.35;
+      }
+
+      .prova-sep-h {
+        width: 100%;
+        margin: 20px 0;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.12), transparent);
+      }
+
+      .prova-body h2 {
+        font-size: 1.7rem;
+        letter-spacing: 0;
+      }
+
+      .prova-body p {
+        font-size: 0.98rem;
+      }
+
+      .prova-screens {
+        display: grid;
+        gap: 14px;
+        height: auto;
+        max-width: none;
+        perspective: none;
+      }
+
+      .prova-screen-card,
+      .prova-screen-card:nth-child(1),
+      .prova-screen-card:nth-child(2),
+      .prova-screen-card:nth-child(3) {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 10;
+        transform: none !important;
+      }
+
+      .prova-screen-card:hover {
+        transform: none !important;
+      }
+
+      .como-title {
+        font-size: 2rem;
+        letter-spacing: 0;
+        margin-bottom: 36px;
+      }
+
+      .step-ref {
+        padding: 24px 0;
+      }
+
+      .step-ref-title {
+        font-size: 1.32rem;
+      }
+
+      .step-ref-desc-wrap {
+        gap: 12px;
+      }
+
+      #cta {
+        background-attachment: scroll;
+      }
+
+      .cta-big {
+        font-size: 2.7rem;
+        letter-spacing: 0;
+      }
+
+      .cta-in h2 {
+        font-size: 1.35rem;
+        letter-spacing: 0;
+      }
+
+      #cta .btn {
+        width: 100%;
+        max-width: 340px;
+        justify-content: center;
+        white-space: normal;
+        padding: 15px 20px !important;
+        line-height: 1.25;
+      }
+
+      #contato {
+        padding: 72px 18px;
+      }
+
+      .ct-grid {
+        gap: 42px;
+      }
+
+      .ct-l h2,
+      .ct-r h2 {
+        font-size: 2.2rem;
+        letter-spacing: 0;
+      }
+
+      .ct-l p,
+      .ct-r p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+      }
+
+      #contato form {
+        gap: 16px;
+      }
+
+      .fld input,
+      .fld textarea,
+      .fld select {
+        min-height: 46px;
+        font-size: 16px;
+      }
+
+      .consent-text {
+        font-size: 0.82rem;
+      }
+
+      .f-btn {
+        width: 100%;
+        align-self: stretch;
+      }
+
+      .ct-photo {
+        height: 220px;
+        margin-bottom: 30px;
+      }
+
+      .ct-logos {
+        gap: 22px;
+      }
+
+      .ct-logos img {
+        height: 22px;
+      }
+
+      footer {
+        padding: 36px 18px;
+      }
+
+      .foot-links {
+        flex-wrap: wrap;
+        gap: 16px 22px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero-h1 {
+        max-width: 17.5rem;
+        font-size: 1.72rem;
+      }
+
+      .nav-btn-w {
+        padding: 9px 13px;
+        font-size: 0.78rem;
+      }
+
+      .logo-img {
+        height: 25px;
+      }
+
+      .stat-num {
+        font-size: 3.55rem;
+      }
+
+      .cta-big {
+        font-size: 2.35rem;
+      }
+
+      .ct-l h2,
+      .ct-r h2,
+      .bento-title,
+      .como-title {
+        font-size: 1.86rem;
+      }
     }
   </style>
 </head>
