@@ -4,12 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kyp — Automação de Processos e IA para empresas</title>
+  <title>Kyp — Suíte Integrada de Operações de RH &amp; People</title>
+  <meta name="description"
+    content="Plataforma integrada de RH: Recrutamento ATS, Admissão Digital, Assinatura Eletrônica Própria, Cargos & Salários, Avaliação Comportamental 5 Eixos e Entrevista por IA." />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
     rel="stylesheet" />
   <style>
     *,
@@ -30,7 +32,7 @@
       --sf2: #191925;
       --bdr: rgba(255, 255, 255, 0.07);
       --txt: #EAEAF2;
-      --sub: #63637A;
+      --sub: #8E8EA8;
       --grad: linear-gradient(135deg, #00C2CB 0%, #7030E8 50%, #C020A0 100%);
       --gx: linear-gradient(90deg, #00C2CB 0%, #7030E8 50%, #C020A0 100%);
     }
@@ -112,7 +114,7 @@
     }
 
     .section {
-      padding: 120px 40px;
+      padding: 100px 40px;
     }
 
     .wrap {
@@ -131,7 +133,7 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--c);
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .lbl::before {
@@ -155,25 +157,11 @@
       transform: none;
     }
 
-    .d1 {
-      transition-delay: 0.07s;
-    }
-
-    .d2 {
-      transition-delay: 0.14s;
-    }
-
-    .d3 {
-      transition-delay: 0.21s;
-    }
-
-    .d4 {
-      transition-delay: 0.28s;
-    }
-
-    .d5 {
-      transition-delay: 0.35s;
-    }
+    .d1 { transition-delay: 0.07s; }
+    .d2 { transition-delay: 0.14s; }
+    .d3 { transition-delay: 0.21s; }
+    .d4 { transition-delay: 0.28s; }
+    .d5 { transition-delay: 0.35s; }
 
     /* Custom cursor */
     #cur {
@@ -297,7 +285,7 @@
     }
 
     /* ═════════════════════════════════════
-       NAVBAR
+       NAVBAR COM DROPDOWN DE FUNCIONALIDADES
     ═════════════════════════════════════ */
     #nav {
       position: fixed;
@@ -320,7 +308,7 @@
     #nav.s {
       top: 16px;
       padding: 12px 28px;
-      background: rgba(18, 18, 28, 0.55);
+      background: rgba(18, 18, 28, 0.85);
       border-color: rgba(255, 255, 255, 0.1);
       box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
     }
@@ -352,6 +340,12 @@
       display: block;
     }
 
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
     .nav-link {
       color: rgba(255, 255, 255, 0.85);
       text-decoration: none;
@@ -372,6 +366,89 @@
       margin-left: 2px;
     }
 
+    /* Menu Dropdown de Funcionalidades */
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown-btn {
+      color: rgba(255, 255, 255, 0.9);
+      background: none;
+      border: none;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 0;
+      transition: color .2s;
+    }
+
+    .nav-dropdown-btn:hover {
+      color: var(--c);
+    }
+
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 12px;
+      width: 290px;
+      background: rgba(18, 18, 28, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      padding: 10px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      z-index: 1001;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown-menu:hover {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .nav-drop-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: rgba(255, 255, 255, 0.88);
+      text-decoration: none;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.85rem;
+      transition: background .2s, color .2s, transform .2s;
+      cursor: none;
+    }
+
+    .nav-drop-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--c);
+      transform: translateX(3px);
+    }
+
+    .nav-drop-icon {
+      font-size: 1rem;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: rgba(0, 194, 203, 0.12);
+      color: var(--c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
     .nav-btn-w {
       background: #fff;
       color: #000;
@@ -390,7 +467,6 @@
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     }
 
-
     /* Premium Hero Text Animations */
     .hero-h1.fi {
       opacity: 1;
@@ -403,7 +479,6 @@
       vertical-align: bottom;
       padding-bottom: 5px;
       margin-bottom: -5px;
-      /* prevent font clipping */
     }
 
     .hero-h1 .line-rev>span {
@@ -443,7 +518,7 @@
     }
 
     /* ═════════════════════════════════════
-       HERO
+       HERO (AJUSTADO PARA SER MAIS CONCISO E COMERCIAL)
     ═════════════════════════════════════ */
     .hero-outer {
       position: relative;
@@ -452,7 +527,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 140px 40px 100px;
+      padding: 130px 40px 90px;
       overflow: hidden;
     }
 
@@ -486,7 +561,7 @@
       position: relative;
       z-index: 2;
       width: 100%;
-      max-width: 900px;
+      max-width: 840px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -507,42 +582,29 @@
       letter-spacing: .08em;
       text-transform: uppercase;
       color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       backdrop-filter: blur(8px);
-    }
-
-    .hero-tag-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: #fff;
-      opacity: 0.8;
-    }
-
-    .hero-tag-arrow {
-      font-size: 0.8rem;
-      opacity: 0.6;
-      margin-left: 2px;
     }
 
     .hero-h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(3rem, 5.5vw, 5rem);
+      font-size: clamp(2.6rem, 4.8vw, 4.2rem);
       font-weight: 800;
       line-height: 1.08;
       letter-spacing: -0.03em;
-      margin-bottom: 26px;
+      margin-bottom: 22px;
       color: #fff;
       text-wrap: balance;
     }
 
+    /* AJUSTE SOLICITADO: LARGURA RESTRINGIDA (MAX-WIDTH 480PX) PARA EVITAR TEXTO LARGO */
     .hero-sub {
       font-family: 'Roboto', sans-serif;
-      font-size: clamp(1rem, 1.8vw, 1.25rem);
-      color: rgba(255, 255, 255, 0.85);
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      color: rgba(255, 255, 255, 0.88);
       line-height: 1.6;
-      max-width: 580px;
-      margin-bottom: 48px;
+      max-width: 480px;
+      margin-bottom: 38px;
       font-weight: 300;
       text-wrap: balance;
     }
@@ -557,7 +619,7 @@
       border-radius: 40px;
       font-family: 'Roboto', sans-serif;
       font-size: 0.95rem;
-      font-weight: 500;
+      font-weight: 600;
       text-decoration: none;
       transition: transform .2s, box-shadow .2s, background .2s;
       cursor: none;
@@ -571,7 +633,7 @@
 
     .hero-logos-wrapper {
       position: absolute;
-      bottom: 40px;
+      bottom: 28px;
       left: 0;
       right: 0;
       z-index: 2;
@@ -585,1289 +647,1123 @@
     .hero-powered-by {
       font-family: 'Montserrat', sans-serif;
       font-size: 0.65rem;
-      font-weight: 400;
+      font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.35);
+      color: rgba(255, 255, 255, 0.45);
     }
 
-    .hero-logos {
+    .hero-startups-row,
+    .ct-startups-row {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: clamp(24px, 5vw, 64px);
+      gap: 16px;
       flex-wrap: wrap;
-      opacity: 0.6;
     }
 
-    .hero-logo {
-      display: flex;
+    .ct-startups-row {
+      justify-content: flex-start;
+    }
+
+    .startup-badge {
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: #fff;
-      letter-spacing: -0.02em;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 8px 18px;
+      border-radius: 999px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
-    .hero-logo-img {
-      height: 26px;
+    .startup-badge:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .startup-badge-logo {
+      height: 20px;
       width: auto;
       object-fit: contain;
-      filter: brightness(0) invert(1);
-      opacity: 0.7;
-      transition: opacity 0.3s ease, transform 0.2s ease;
+      display: block;
     }
 
-    /* Specific visual balancing based on n8n proportion */
-    .hero-logo-img[alt="n8n"] {
-      height: 32px;
+    .startup-badge-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.88);
+      letter-spacing: 0.01em;
+      white-space: nowrap;
     }
 
-    .hero-logo-img[alt="Supabase"],
-    .hero-logo-img[alt="Claude AI"] {
-      height: 24px;
+    .startup-badge-text strong {
+      font-weight: 700;
+      color: #ffffff;
     }
-
-    .hero-logo-img[alt="Vercel"] {
-      height: 22px;
-    }
-
-    .hero-logo-img[alt="Lovable"] {
-      height: 26px;
-    }
-
-    .hero-logo-img:hover {
-      opacity: 1;
-    }
-
-
-
-
 
     /* ═════════════════════════════════════
-       BENTO GRID - PROBLEMA
+       SEÇÃO: O DIFERENCIAL KYP (CONTINUIDADE DE DADOS)
     ═════════════════════════════════════ */
     .bento-header {
       text-align: center;
-      max-width: 760px;
-      margin: 0 auto 64px auto;
+      max-width: 680px;
+      margin: 0 auto 52px;
     }
 
     .bento-title {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-size: clamp(2rem, 3.8vw, 3rem);
       font-weight: 300;
-      letter-spacing: -0.04em;
-      margin-bottom: 24px;
-      line-height: 1.1;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: #1a1a24;
+      margin-bottom: 16px;
     }
 
     .bento-subtitle {
-      font-family: 'Montserrat', sans-serif;
-      color: var(--sub);
-      font-size: 1.15rem;
-      line-height: 1.7;
-      max-width: 600px;
-      margin: 0 auto;
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(0.98rem, 1.5vw, 1.1rem);
+      color: #555566;
+      line-height: 1.6;
+      font-weight: 400;
     }
 
     .bento-subtitle .highlight {
-      position: relative;
-      font-weight: 800;
-      color: #fff;
-      display: inline-block;
-      padding: 0 4px;
-      z-index: 1;
-      white-space: nowrap;
-    }
-
-    .bento-subtitle .highlight::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      bottom: -2px;
-      left: -4px;
-      right: -4px;
-      background: #db7856;
-      border-radius: 4px 12px 3px 14px / 12px 3px 14px 4px;
-      transform-origin: left center;
-      transform: scaleX(0) skewX(-4deg) rotate(-1deg);
-      z-index: -1;
-    }
-
-    .in .highlight::before {
-      animation: drawMarker 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-      animation-delay: 0.4s;
-    }
-
-    @keyframes drawMarker {
-      0% {
-        transform: scaleX(0) skewX(-4deg) rotate(-1deg);
-      }
-
-      100% {
-        transform: scaleX(1) skewX(-4deg) rotate(-1deg);
-      }
+      color: #000;
+      font-weight: 600;
+      background: linear-gradient(180deg, transparent 65%, rgba(0, 194, 203, 0.25) 65%);
     }
 
     .bento-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-auto-rows: minmax(220px, auto);
-      gap: 24px;
-      width: 100%;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
 
     .bento-card {
-      background: rgba(18, 18, 28, 0.4);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
-      padding: 40px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s;
-      cursor: none;
-    }
-
-    .bento-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(120% 120% at top right, rgba(112, 48, 232, 0.15), transparent 70%);
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      z-index: 0;
+      justify-content: space-between;
+      min-height: 200px;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .bento-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(255, 255, 255, 0.18);
-    }
-
-    .bento-card:hover::before {
-      opacity: 1;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
     }
 
     .bento-card h3 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 4.5rem;
-      font-weight: 900;
-      color: rgba(255, 255, 255, 0.04);
-      position: absolute;
-      top: 12px;
-      right: 24px;
-      line-height: 1;
-      letter-spacing: -0.06em;
-      transition: color 0.4s ease;
-      z-index: 1;
-      user-select: none;
-    }
-
-    .bento-card:hover h3 {
-      color: rgba(255, 255, 255, 0.08);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--p);
+      margin-bottom: 12px;
     }
 
     .bento-card p {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: #D1D1E0;
-      line-height: 1.6;
-      margin-top: 60px;
-      position: relative;
-      z-index: 2;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.92rem;
+      color: #444455;
+      line-height: 1.5;
     }
 
-    .bento-card:nth-child(1) {
-      grid-column: span 2;
-    }
-
-    .bento-card:nth-child(2) {
-      grid-column: span 1;
-    }
-
-    .bento-card:nth-child(3) {
-      grid-column: span 1;
-    }
-
-    .bento-card:nth-child(4) {
-      grid-column: span 2;
-    }
-
-    /* Light Theme Overrides for #problema */
-    .light-theme {
+    .section.light-theme {
       color: #1a1a24;
     }
 
-    .light-theme .bento-title {
-      color: #111;
+    .section.light-theme .lbl {
+      color: var(--p);
     }
 
-    .light-theme .bento-subtitle {
-      color: #555;
-    }
-
-    .light-theme .lbl {
-      color: #111;
-      border-color: rgba(0, 0, 0, 0.1);
-    }
-
-    .light-theme .bento-card {
-      background: rgba(255, 255, 255, 0.6);
-      border-color: rgba(0, 0, 0, 0.08);
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
-    }
-
-    .light-theme .bento-card:hover {
-      border-color: rgba(0, 0, 0, 0.15);
-    }
-
-    .light-theme .bento-card h3 {
-      color: rgba(0, 0, 0, 0.05);
-    }
-
-    @keyframes glitchNumber {
-      0% {
-        color: rgba(0, 0, 0, 0.05);
-        transform: translate(0);
-        text-shadow: none;
-      }
-
-      20% {
-        color: #111;
-        transform: translate(-3px, 2px);
-        text-shadow: -2px 0 #db7856, 2px 0 #7030e8;
-      }
-
-      40% {
-        color: rgba(0, 0, 0, 0.4);
-        transform: translate(3px, -2px);
-        text-shadow: 2px 0 #db7856, -2px 0 #7030e8;
-      }
-
-      60% {
-        color: #111;
-        transform: translate(-2px, -1px);
-        text-shadow: none;
-      }
-
-      80% {
-        color: rgba(0, 0, 0, 0.6);
-        transform: translate(2px, 1px);
-        text-shadow: -1px 0 #db7856, 1px 0 #7030e8;
-      }
-
-      100% {
-        color: #111;
-        transform: translate(0);
-        text-shadow: none;
-      }
-    }
-
-    .light-theme .bento-card:hover h3 {
-      animation: glitchNumber 0.35s cubic-bezier(.25, .46, .45, .94) forwards;
-    }
-
-    .light-theme .bento-card p {
-      color: #444;
-    }
-
-    @media (max-width: 960px) {
-      .bento-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .bento-card {
-        grid-column: span 1 !important;
-      }
+    .section.light-theme .lbl::before {
+      background: var(--p);
     }
 
     /* ═════════════════════════════════════
-       SOLUÇÃO
+       ESTILOS DAS ÁREAS DEDICADAS DE FUNCIONALIDADES
     ═════════════════════════════════════ */
-    #solucao {
-      background: #f9f4eb;
-      padding-left: 16px;
-      padding-right: 16px;
+    .feat-section {
+      padding: 90px 40px;
+      border-bottom: 1px solid var(--bdr);
     }
 
-    #solucao .wrap {
-      width: 100%;
-      max-width: 1920px;
-      background: #0a0a0c;
-      border-radius: 28px;
-      padding: 80px;
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.15);
-    }
-
-    .sol-grid {
+    .feat-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .feat-grid.reverse {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .feat-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .feat-desc {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      color: var(--sub);
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+
+    .feat-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .feat-bullets li {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.92rem;
+      color: #e2e2ee;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .feat-bullets li::before {
+      content: '✓';
+      color: var(--c);
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+
+    .feat-card-visual {
+      background: rgba(22, 22, 34, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 35px rgba(114, 9, 183, 0.2);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .feat-card-visual:hover {
+      transform: translateY(-6px) scale(1.015);
+      border-color: rgba(0, 229, 255, 0.4);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.65), 0 0 45px rgba(114, 9, 183, 0.35);
+    }
+
+    .feat-card-visual img,
+    .feat-img-zoom {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+      cursor: zoom-in;
+      transition: transform 0.4s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feat-img-zoom:hover {
+      filter: brightness(1.05);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 229, 255, 0.3);
+    }
+
+    .feat-badge-overlay {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(10, 10, 18, 0.88);
+      border: 1px solid rgba(0, 229, 255, 0.35);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #00e5ff;
+      letter-spacing: 0.03em;
+      z-index: 4;
+      pointer-events: none;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Lightbox Modal CSS */
+    .img-modal {
+      display: none;
+      position: fixed;
+      z-index: 99999;
+      padding: 40px 20px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(5, 5, 12, 0.94);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .img-modal-content {
+      margin: auto;
+      display: block;
+      max-width: 92%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85), 0 0 50px rgba(114, 9, 183, 0.4);
+      animation: modalZoomIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .img-modal-caption {
+      margin: 16px auto 0;
+      display: block;
+      text-align: center;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 8px 24px;
+      border-radius: 999px;
+    }
+
+    .img-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 38px;
+      font-weight: 300;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .img-modal-close:hover {
+      color: #00e5ff;
+      transform: scale(1.1);
+    }
+
+    @keyframes modalZoomIn {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* ═════════════════════════════════════
+       SEÇÃO: SOBRE A KYP (QUEM SOMOS & ECOSSISTEMA)
+    ═════════════════════════════════════ */
+    .sobre-section {
+      padding: 95px 40px;
+      border-bottom: 1px solid var(--bdr);
+      background: radial-gradient(circle at 85% 30%, rgba(114, 9, 183, 0.12) 0%, transparent 65%), var(--bg);
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .sobre-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-top: 12px;
+      margin-bottom: 24px;
+    }
+
+    .sobre-text {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .sobre-text p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.98rem;
+      color: #c4c4d4;
+      line-height: 1.7;
+    }
+
+    .sobre-text p strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .sobre-highlight {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: 1.02rem !important;
+      font-weight: 600;
+      color: #00e5ff !important;
+      background: rgba(0, 229, 255, 0.06);
+      border-left: 3px solid #00e5ff;
+      padding: 14px 20px;
+      border-radius: 0 12px 12px 0;
+      margin-top: 6px;
+      box-shadow: 0 4px 20px rgba(0, 229, 255, 0.08);
+    }
+
+    .sobre-card {
+      background: rgba(22, 22, 34, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 35px rgba(114, 9, 183, 0.2);
+    }
+
+    .sobre-img-container {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .sobre-img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .sobre-card:hover .sobre-img {
+      transform: scale(1.03);
+    }
+
+    .sobre-img-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(10, 10, 18, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    .sobre-badges-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .sobre-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      padding: 12px 14px;
+      border-radius: 14px;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .sobre-badge-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(0, 229, 255, 0.3);
+    }
+
+    .sobre-badge-item .sb-icon {
+      font-size: 1.2rem;
+    }
+
+    .sobre-badge-item .sb-logo {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    .sobre-badge-item div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sobre-badge-item strong {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .sobre-badge-item span {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.68rem;
+      color: var(--sub);
+    }
+
+    /* ═════════════════════════════════════
+       SEÇÃO ICP (PERFIL DE CLIENTE IDEAL)
+    ═════════════════════════════════════ */
+    .icp-section {
+      padding: 90px 40px;
+      border-bottom: 1px solid var(--bdr);
+      background: var(--bg2);
+    }
+
+    .icp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 24px;
       margin-top: 40px;
     }
 
-    .sol-card {
-      background: transparent;
-      border-radius: 16px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
-      cursor: none;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    .icp-card {
+      background: rgba(22, 22, 34, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 28px;
+      transition: all 0.3s ease;
     }
 
-    .sol-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    .icp-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 229, 255, 0.35);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
     }
 
-    .sol-card-text {
-      padding: 32px 28px;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      flex: 1;
+    .icp-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
     }
 
-    .sol-card.d1 .sol-card-text {
-      background: rgba(0, 194, 203, 0.15);
-    }
-
-    .sol-card.d2 .sol-card-text {
-      background: rgba(112, 48, 232, 0.15);
-    }
-
-    .sol-card.d3 .sol-card-text {
-      background: rgba(192, 32, 160, 0.15);
-    }
-
-    .sol-card-header {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 24px;
-    }
-
-    .sol-badge-num {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Poppins', sans-serif;
+    .icp-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
       font-weight: 700;
-      font-size: 0.85rem;
-      color: #fff;
+      color: #ffffff;
+      margin-bottom: 10px;
     }
 
-    .sol-card.d1 .sol-badge-num {
-      background: var(--c);
-    }
-
-    .sol-card.d2 .sol-badge-num {
-      background: var(--p);
-    }
-
-    .sol-card.d3 .sol-badge-num {
-      background: var(--pk);
-    }
-
-    .sol-badge-arrow {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: #111;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
+    .icp-card p {
+      font-family: 'Roboto', sans-serif;
       font-size: 0.9rem;
-      font-weight: 900;
-    }
-
-    .sol-card h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1.25rem;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-      color: #fff;
-    }
-
-    .sol-card p {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
-      font-size: 0.95rem;
-      color: var(--txt);
+      color: var(--sub);
       line-height: 1.6;
-      margin: 0;
-    }
-
-    .sol-card-img-wrap {
-      width: 100%;
-      height: 260px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .sol-card-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .sol-card:hover .sol-card-img {
-      transform: scale(1.05);
     }
 
     /* ═════════════════════════════════════
-       KYPHIRING (ATS)
+       SEÇÃO FAQ (DÚVIDAS FREQUENTES)
     ═════════════════════════════════════ */
-    #kyphiring {
-      background: #f9f4eb;
-      position: relative;
+    .faq-section {
+      padding: 95px 40px;
+      border-bottom: 1px solid var(--bdr);
+      background: var(--bg);
+    }
+
+    .faq-accordion {
+      max-width: 860px;
+      margin: 40px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: rgba(22, 22, 34, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
       overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(0, 229, 255, 0.3);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 22px 28px;
+      background: transparent;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: #ffffff;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .faq-toggle-icon {
+      font-size: 1.3rem;
+      color: #00e5ff;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-toggle-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 28px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 0 28px 24px;
+    }
+
+    .faq-answer p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.94rem;
+      color: #c4c4d4;
+      line-height: 1.65;
+    }
+
+    /* ═════════════════════════════════════
+       SEÇÃO PLANOS E PRECIFICAÇÃO SINAL
+    ═════════════════════════════════════ */
+    .planos-section {
+      padding: 90px 40px;
+      border-bottom: 1px solid var(--bdr);
+      background: radial-gradient(circle at 50% 50%, rgba(114, 9, 183, 0.15) 0%, transparent 70%), var(--bg2);
+    }
+
+    .planos-box {
+      max-width: 900px;
+      margin: 36px auto 0;
+      background: rgba(22, 22, 34, 0.85);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      border-radius: 24px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(114, 9, 183, 0.25);
+    }
+
+    .planos-tag {
+      display: inline-block;
+      background: rgba(0, 229, 255, 0.1);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      color: #00e5ff;
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .planos-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+
+    .planos-desc {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      color: #c4c4d4;
+      max-width: 680px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+
+    .planos-pills {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .planos-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: #e2e2ee;
     }
 
     .kh-grid {
       display: grid;
-      grid-template-columns: 1fr 1.08fr;
-      gap: 72px;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
       align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .kh-text,
-    .kh-mock {
-      min-width: 0;
     }
 
     .kh-title {
       font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 3.8vw, 3rem);
       font-weight: 300;
-      font-size: clamp(2rem, 3.6vw, 3rem);
-      letter-spacing: -.04em;
       line-height: 1.12;
-      color: #111;
+      letter-spacing: -0.03em;
+      color: #1a1a24;
       margin-bottom: 20px;
     }
 
-    .kh-title strong {
-      font-weight: 800;
-    }
-
     .kh-sub {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
-      font-size: 1rem;
-      color: #444;
-      line-height: 1.78;
-      max-width: 480px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.02rem;
+      color: #555566;
+      line-height: 1.65;
+      margin-bottom: 32px;
     }
 
     .kh-feats {
       display: flex;
       flex-direction: column;
-      margin: 36px 0 40px;
+      gap: 18px;
+      margin-bottom: 36px;
     }
 
     .kh-feat {
       display: flex;
-      gap: 18px;
       align-items: flex-start;
-      padding: 18px 0;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .kh-feat:last-child {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      gap: 14px;
     }
 
     .kh-feat-ic {
-      width: 38px;
-      height: 38px;
-      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
       border-radius: 10px;
+      background: rgba(112, 48, 232, 0.08);
+      border: 1px solid rgba(112, 48, 232, 0.15);
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #fff;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      color: var(--c);
-    }
-
-    .kh-feat:nth-child(2) .kh-feat-ic {
-      color: var(--p);
-    }
-
-    .kh-feat:nth-child(3) .kh-feat-ic {
-      color: var(--pk);
+      flex-shrink: 0;
+      margin-top: 2px;
     }
 
     .kh-feat-ic svg {
       width: 18px;
       height: 18px;
       fill: none;
-      stroke: currentColor;
-      stroke-width: 1.8;
+      stroke: var(--p);
+      stroke-width: 2;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
     .kh-feat h3 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 700;
-      color: #111;
-      margin-bottom: 4px;
+      color: #1a1a24;
+      margin-bottom: 2px;
     }
 
     .kh-feat p {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
-      font-size: .92rem;
-      color: #555;
-      line-height: 1.6;
-      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.88rem;
+      color: #666677;
+      line-height: 1.5;
     }
 
-    /* ── Print do produto ── */
     .kh-mock {
       position: relative;
     }
 
     .kh-shot {
-      display: block;
       width: 100%;
-      height: auto;
-      filter: drop-shadow(0 20px 45px rgba(0, 0, 0, .22)) drop-shadow(0 4px 12px rgba(0, 0, 0, .1));
-      transition: transform .5s cubic-bezier(0.16, 1, 0.3, 1);
+      border-radius: 16px;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      display: block;
     }
 
-    .kh-mock:hover .kh-shot {
-      transform: scale(1.015);
-    }
-
-    /* Chips flutuantes */
     .kh-float {
       position: absolute;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, .92);
-      border: 1px solid rgba(0, 0, 0, .08);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: #ffffff;
       border-radius: 12px;
       padding: 10px 16px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: .75rem;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.8rem;
       font-weight: 600;
-      color: #111;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, .12);
-      animation: khFloat 5.5s ease-in-out infinite;
+      color: #1a1a24;
+      z-index: 3;
       white-space: nowrap;
+      pointer-events: none;
     }
 
-    .kh-float-1 {
-      top: -22px;
-      right: -16px;
-    }
-
-    .kh-float-2 {
-      bottom: -20px;
-      left: -24px;
-      animation-delay: 2.6s;
-    }
-
-    .kh-float .gt {
-      font-weight: 800;
-    }
-
-    @keyframes khFloat {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-8px);
-      }
-    }
-
-    @media (max-width: 1060px) {
-      .kh-grid {
-        grid-template-columns: 1fr;
-        gap: 56px;
-      }
-
-      .kh-sub {
-        max-width: 560px;
-      }
-
-      .kh-float-1 {
-        right: 4px;
-      }
-
-      .kh-float-2 {
-        left: 4px;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .kh-grid {
-        gap: 40px;
-      }
-
-      .kh-title {
-        font-size: 1.86rem;
-        letter-spacing: 0;
-      }
-
-      .kh-title br {
-        display: none;
-      }
-
-      .kh-title strong:first-child {
-        display: block;
-      }
-
-      .kh-float-1 {
-        display: none;
-      }
-
-      .kh-feats {
-        margin: 28px 0 32px;
-      }
-
-      .kh-float {
-        font-size: .68rem;
-        padding: 8px 12px;
-      }
-
-      .kh-float-1 {
-        top: -14px;
-      }
-
-      .kh-float-2 {
-        bottom: -14px;
-      }
-
-      #kyphiring .btn {
-        width: 100%;
-        justify-content: center;
-        white-space: normal;
-        line-height: 1.25;
-      }
-    }
+    .kh-float-1 { top: -16px; left: -20px; }
+    .kh-float-2 { bottom: -16px; right: -16px; color: #008855; }
 
     /* ═════════════════════════════════════
-       PROVA SOCIAL
+       GOVERNANÇA & SEGURANÇA MULTI-TENANT
     ═════════════════════════════════════ */
-    #prova {
-      background: #f9f4eb;
-      overflow: hidden;
-      position: relative;
-    }
-
-    #prova::before {
-      content: var(--count-text, '170M');
-      position: absolute;
-      font-family: 'Roboto', sans-serif;
-      font-weight: 700;
-      font-size: clamp(120px, 20vw, 260px);
-      letter-spacing: -.07em;
-      line-height: 1;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: var(--grad);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      opacity: .04;
-      pointer-events: none;
-      white-space: nowrap;
-      user-select: none;
-    }
-
     .prova-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
       align-items: center;
-      position: relative;
-      z-index: 1;
     }
 
-    /* ── Prova Text (left) ── */
     .prova-text-col {
       display: flex;
       flex-direction: column;
-      gap: 48px;
+      justify-content: center;
     }
 
     .stat-num {
       display: block;
-      font-family: 'Roboto', sans-serif;
-      font-size: clamp(4rem, 8vw, 7.5rem);
-      font-weight: 700;
-      letter-spacing: -.05em;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 900;
       line-height: 1;
-      background: var(--grad);
+      letter-spacing: -0.04em;
+      background: var(--gx);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text;
+      margin-bottom: 8px;
     }
 
     .stat-lbl {
-      font-family: 'Montserrat', sans-serif;
-      font-size: .68rem;
-      font-weight: 500;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: #111;
-      margin-top: 10px;
       display: block;
-    }
-
-    .prova-sep-h {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.1), transparent);
-      margin: 32px 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sub);
+      margin-bottom: 32px;
     }
 
     .prova-body h2 {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
       font-weight: 300;
-      color: #111;
-      letter-spacing: -.03em;
-      margin-bottom: 16px;
       line-height: 1.2;
-    }
-
-    .prova-body h2 strong {
-      font-weight: 800;
+      color: #fff;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
     }
 
     .prova-body p {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Roboto', sans-serif;
       font-size: 1rem;
-      font-weight: 300;
-      color: #444;
-      line-height: 1.78;
+      color: var(--sub);
+      line-height: 1.65;
     }
 
-    /* ── Prova Screenshots (right) ── */
     .prova-screens {
       position: relative;
-      width: 100%;
-      height: 640px;
-      perspective: 1200px;
+      height: 440px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .prova-screen-card {
       position: absolute;
-      border-radius: 14px;
+      border-radius: 12px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
-      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-        box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-        border-color 0.4s ease,
-        z-index 0s;
-      cursor: none;
-      will-change: transform;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .prova-screen-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
       display: block;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-        filter 0.5s ease;
-    }
-
-    /* Glow overlay on hover */
-    .prova-screen-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 14px;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      pointer-events: none;
-    }
-
-    /* Card 1 — Lovable (back, top-left) */
-    .prova-screen-card:nth-child(1) {
-      width: 440px;
-      height: 285px;
-      top: 0;
-      left: -20px;
-      z-index: 1;
-    }
-
-    .prova-screen-card:nth-child(1)::after {
-      background: linear-gradient(135deg, rgba(0, 194, 203, 0.25), transparent 60%);
-    }
-
-    /* Card 2 — Supabase (middle, center-right) */
-    .prova-screen-card:nth-child(2) {
-      width: 460px;
-      height: 295px;
-      top: 160px;
-      left: 200px;
-      z-index: 2;
-    }
-
-    .prova-screen-card:nth-child(2)::after {
-      background: linear-gradient(135deg, rgba(112, 48, 232, 0.25), transparent 60%);
-    }
-
-    /* Card 3 — Claude Code (front, bottom) */
-    .prova-screen-card:nth-child(3) {
-      width: 420px;
-      height: 275px;
-      top: 340px;
-      left: 0;
-      z-index: 3;
-    }
-
-    .prova-screen-card:nth-child(3)::after {
-      background: linear-gradient(135deg, rgba(192, 32, 160, 0.25), transparent 60%);
-    }
-
-    /* Hover state for all cards */
-    .prova-screen-card:hover {
-      z-index: 10 !important;
-      transform: scale(1.08) translateY(-10px) !important;
-      box-shadow:
-        0 24px 60px rgba(0, 0, 0, 0.6),
-        0 0 30px rgba(112, 48, 232, 0.2),
-        0 0 60px rgba(0, 194, 203, 0.1);
-      border-color: rgba(255, 255, 255, 0.25);
-    }
-
-    .prova-screen-card:hover::after {
-      opacity: 1;
-    }
-
-    .prova-screen-card:hover img {
-      transform: scale(1.04);
-      filter: brightness(1.1) saturate(1.1);
-    }
-
-    /* ═════════════════════════════════════
-       COMO FUNCIONA
-    ═════════════════════════════════════ */
-    #como {
-      background: #f9f4eb;
-      position: relative;
-    }
-
-    .como-container {
-      max-width: 800px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .como-title {
-      font-size: clamp(2.4rem, 4vw, 3.2rem);
-      font-weight: 400;
-      letter-spacing: -0.04em;
-      color: #111;
-      margin-top: 0;
-      margin-bottom: 64px;
-      line-height: 1.15;
-    }
-
-    .steps-ref-list {
-      display: flex;
-      flex-direction: column;
       width: 100%;
-      text-align: left;
+      height: auto;
     }
 
-    .step-ref {
-      padding: 32px 0;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .step-ref:last-child {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .step-ref-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #111;
-      margin-bottom: 16px;
-      letter-spacing: -0.02em;
-    }
-
-    .step-ref-desc-wrap {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-    }
-
-    .step-ref-arrow {
-      font-size: 1.4rem;
-      color: #e65100;
-      line-height: 1;
-      margin-top: 2px;
-    }
-
-    .step-ref-desc {
-      font-size: 1.05rem;
-      color: #444;
-      line-height: 1.6;
-      font-weight: 300;
-    }
-
-
+    .prova-screen-card:nth-child(1) { width: 82%; top: 0; left: 0; z-index: 1; transform: rotate(-2deg); }
+    .prova-screen-card:nth-child(2) { width: 82%; top: 90px; right: 0; z-index: 2; transform: rotate(2.5deg); }
+    .prova-screen-card:nth-child(3) { width: 82%; bottom: 10px; left: 30px; z-index: 3; transform: rotate(-1deg); }
 
     /* ═════════════════════════════════════
        CTA FINAL
     ═════════════════════════════════════ */
     #cta {
-      background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('Fotos e Vídeos/skyline-curitiba.jpg') center/cover no-repeat;
-      background-attachment: fixed;
-      border-top: 1px solid var(--bdr);
       text-align: center;
+      padding: 140px 40px;
       overflow: hidden;
-      position: relative;
     }
 
     .cta-glow {
       position: absolute;
-      width: 900px;
-      height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle,
-          rgba(192, 32, 160, .2) 0%, rgba(112, 48, 232, .12) 35%, transparent 65%);
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      width: 700px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(112, 48, 232, 0.28) 0%, rgba(0, 194, 203, 0.12) 50%, transparent 70%);
       filter: blur(80px);
       pointer-events: none;
-      display: none;
+      z-index: 0;
     }
 
     .cta-in {
-      max-width: 720px;
-      margin: 0 auto;
       position: relative;
       z-index: 1;
-      font-family: 'Montserrat', sans-serif;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     .cta-big {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+      font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 800;
-      letter-spacing: -.03em;
-      line-height: 1;
-      margin-bottom: 16px;
-      color: #fff;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
     }
 
     .cta-in h2 {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(1.4rem, 2.8vw, 2rem);
-      font-weight: 600;
-      letter-spacing: -.02em;
-      margin-bottom: 12px;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 300;
       color: #fff;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
     }
 
     .cta-in p {
-      font-family: 'Montserrat', sans-serif;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 44px;
-      font-size: 1rem;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.05rem;
+      color: var(--sub);
+      margin-bottom: 38px;
     }
 
     /* ═════════════════════════════════════
        CONTATO
     ═════════════════════════════════════ */
-    #contato {
-      background: #f9f4eb;
-      color: #111;
-      padding: 100px 24px;
-    }
-
-    #contato .wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
     .ct-grid {
       display: grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap: 120px;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
       align-items: start;
-    }
-
-    /* Left Column (Form) */
-    .ct-l {
-      display: flex;
-      flex-direction: column;
     }
 
     .ct-l h2 {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(3rem, 5vw, 4.2rem);
+      font-size: clamp(2rem, 3.5vw, 2.6rem);
       font-weight: 700;
-      letter-spacing: -.02em;
-      line-height: 1.1;
-      margin-bottom: 12px;
-      color: #111;
+      color: #fff;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
     }
 
     .ct-l p {
-      color: #555;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      margin-bottom: 40px;
-    }
-
-    /* Right Column (Visual) */
-    .ct-r {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding-top: 20px;
-    }
-
-    .ct-r h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(2.5rem, 4vw, 3.5rem);
-      font-weight: 700;
-      color: #111;
-      margin-bottom: 12px;
-      line-height: 1.1;
-    }
-
-    .ct-r p {
-      color: #555;
-      font-size: 1.05rem;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.98rem;
+      color: var(--sub);
       margin-bottom: 32px;
-    }
-
-    .ct-photo {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      object-position: top center;
-      border-radius: 8px;
-      margin-bottom: 40px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-    }
-
-    /* Powered By */
-    .ct-powered {
-      width: 100%;
-    }
-
-    .ct-powered-text {
-      display: block;
-      font-family: 'Montserrat', sans-serif;
-      font-size: .75rem;
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: #888;
-      margin-bottom: 24px;
-      text-align: center;
-    }
-
-    .ct-logos {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .ct-logos img {
-      height: 24px;
-      width: auto;
-      object-fit: contain;
-      filter: grayscale(100%) opacity(0.5);
-      transition: all 0.3s ease;
-    }
-
-    .ct-logos img:hover {
-      filter: grayscale(0%) opacity(1);
-    }
-
-    /* Form */
-    #contato form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
     }
 
     .f-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 16px;
     }
 
     .fld {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
+      margin-bottom: 16px;
     }
 
     .fld label {
-      font-family: 'Roboto', sans-serif;
-      font-size: .95rem;
-      font-weight: 400;
-      color: #111;
-      text-transform: none;
-      letter-spacing: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #aaaab8;
+      letter-spacing: 0.04em;
     }
 
     .fld input,
-    .fld textarea,
-    .fld select {
-      background: #f0f0f0;
-      border: 1px solid transparent;
-      border-radius: 6px;
-      padding: 14px 16px;
-      color: #111;
+    .fld select,
+    .fld textarea {
+      background: var(--surf);
+      border: 1px solid var(--bdr);
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: #fff;
       font-family: 'Roboto', sans-serif;
-      font-size: 1rem;
+      font-size: 0.9rem;
       outline: none;
-      width: 100%;
-      transition: all .25s;
-      appearance: none;
+      transition: border-color .2s, box-shadow .2s;
     }
 
-    .fld select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23555' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 16px center;
+    .fld select option {
+      background: var(--surf);
+      color: #fff;
     }
 
     .fld input:focus,
-    .fld textarea:focus,
-    .fld select:focus {
-      background: #fff;
-      border-color: #ccc;
-      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
-    }
-
-    .fld input::placeholder,
-    .fld textarea::placeholder {
-      color: #888;
+    .fld select:focus,
+    .fld textarea:focus {
+      border-color: var(--c);
+      box-shadow: 0 0 0 3px rgba(0, 194, 203, 0.15);
     }
 
     .fld textarea {
-      resize: none;
-      min-height: 120px;
+      min-height: 90px;
+      resize: vertical;
     }
 
     .consent-text {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
+      gap: 10px;
       font-family: 'Roboto', sans-serif;
-      font-size: 0.85rem;
-      color: #666;
-      line-height: 1.4;
-      margin-top: 4px;
+      font-size: 0.78rem;
+      color: var(--sub);
+      margin-bottom: 20px;
+      line-height: 1.5;
+      cursor: pointer;
     }
 
     .consent-text input {
       margin-top: 3px;
+      accent-color: var(--p);
     }
 
     .f-btn {
-      width: auto;
-      align-self: flex-start;
+      width: 100%;
+      padding: 15px;
+      border-radius: 8px;
       background: var(--grad);
       color: #fff;
-      padding: 16px 36px;
-      font-size: 1rem;
-      border-radius: 6px;
-      font-weight: 500;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
       border: none;
-      cursor: pointer;
-      transition: filter 0.2s;
-      margin-top: 8px;
+      cursor: none;
+      transition: transform .2s, box-shadow .2s;
     }
 
     .f-btn:hover {
-      filter: brightness(1.1);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(112, 48, 232, 0.4);
     }
 
     #formOk {
       display: none;
-      text-align: left;
-      padding: 40px 0;
+      text-align: center;
+      padding: 40px 20px;
+      background: var(--surf);
+      border: 1px solid var(--bdr);
+      border-radius: 12px;
     }
 
     .ok-chk {
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      background: #111;
-      color: #fff;
+      background: rgba(0, 194, 203, 0.15);
+      color: var(--c);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
+      margin: 0 auto 16px;
     }
 
-    #formOk h3 {
+    .ct-r {
+      background: var(--surf);
+      border: 1px solid var(--bdr);
+      border-radius: 20px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .ct-r h2 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.8rem;
-      margin-bottom: 8px;
-      color: #111;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+      line-height: 1.25;
     }
 
-    #formOk p {
-      color: #555;
+    .ct-r p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.9rem;
+      color: var(--sub);
+      margin-bottom: 24px;
     }
 
-    /* ═════════════════════════════════════
-       FOOTER
-    ═════════════════════════════════════ */
-    footer {
-      background: var(--bg2);
+    .ct-photo {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-bottom: 28px;
+      border: 1px solid var(--bdr);
+    }
+
+    .ct-powered {
       border-top: 1px solid var(--bdr);
-      padding: 48px 40px;
+      padding-top: 20px;
+    }
+
+    .ct-powered-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: var(--sub);
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .ct-logos {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .ct-logos img {
+      height: 18px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.5;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--bdr);
+      padding: 50px 40px 30px;
+      background: var(--bg2);
     }
 
     .foot-w {
@@ -1879,669 +1775,59 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-bottom: 32px;
-      border-bottom: 1px solid var(--bdr);
-      margin-bottom: 28px;
+      margin-bottom: 32px;
     }
 
-    .foot-logo-link {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-    }
-
-    .foot-logo-img {
-      height: 34px;
-      width: auto;
-    }
+    .foot-logo-img { height: 26px; }
 
     .foot-links {
       display: flex;
-      gap: 28px;
+      gap: 24px;
     }
 
     .foot-links a {
-      display: flex;
-      align-items: center;
-      gap: 6px;
       color: var(--sub);
       text-decoration: none;
-      font-size: .85rem;
-      font-weight: 500;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
       transition: color .2s;
       cursor: none;
     }
 
-    .foot-links a:hover {
-      color: var(--txt);
-    }
+    .foot-links a:hover { color: #fff; }
 
     .foot-links svg {
-      width: 15px;
-      height: 15px;
+      width: 18px;
+      height: 18px;
       fill: currentColor;
     }
 
     .foot-copy {
-      font-size: .77rem;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.8rem;
       color: var(--sub);
       text-align: center;
+      border-top: 1px solid var(--bdr);
+      padding-top: 24px;
     }
 
-    /* ═════════════════════════════════════
-       RESPONSIVE
-    ═════════════════════════════════════ */
-    @media (max-width: 1060px) {
-      .prova-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-        text-align: center;
-      }
-
-      .prova-screens {
-        height: 500px;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      .prova-screen-card:nth-child(1) {
-        width: 350px;
-        height: 225px;
-        left: 0;
-        top: 0;
-      }
-
-      .prova-screen-card:nth-child(2) {
-        width: 375px;
-        height: 243px;
-        left: 160px;
-        top: 130px;
-      }
-
-      .prova-screen-card:nth-child(3) {
-        width: 325px;
-        height: 212px;
-        left: 10px;
-        top: 270px;
-      }
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .bento-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-grid, .feat-grid.reverse, .kh-grid, .prova-grid, .ct-grid { grid-template-columns: 1fr; }
+      .prova-screens { height: 340px; }
     }
 
-    @media (max-width: 960px) {
-      .section {
-        padding: 88px 24px;
-      }
-
-      .hero-outer {
-        padding: 140px 24px 60px;
-        justify-content: center;
-      }
-
-      .hero-h1 {
-        font-size: clamp(2.4rem, 8vw, 3.2rem);
-      }
-
-      .hero-logos {
-        flex-direction: column;
-        gap: 16px;
-        opacity: 0.8;
-        display: none;
-      }
-
-      .prob-intro {
-        grid-template-columns: 1fr;
-        gap: 36px;
-      }
-
-      .prob-photo-wrap {
-        height: 280px;
-      }
-
-      #nav {
-        padding: 16px 24px;
-      }
-
-      .nav-links,
-      .nav-right a.nav-link {
-        display: none;
-      }
-
-      .nav-btn-w {
-        font-size: 0.85rem;
-        padding: 10px 22px;
-      }
-
-      .prob-intro {
-        grid-template-columns: 1fr;
-        gap: 36px;
-      }
-
-      .prob-photo-wrap {
-        height: 280px;
-      }
-
-      #nav {
-        padding: 12px 20px;
-        width: calc(100% - 32px);
-        top: 16px;
-      }
-
-      .nav-btn {
-        display: none;
-      }
-
-      #solucao .wrap {
-        padding: 40px 24px;
-        border-radius: 24px;
-      }
-
-      .sol-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-
-
-      .prova-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-        text-align: center;
-      }
-
-      .prova-sep-h {
-        margin: 24px auto;
-        width: 60%;
-        background: linear-gradient(to right, transparent, rgba(255, 255, 255, .1), transparent);
-      }
-
-      .prova-screens {
-        height: 440px;
-        max-width: 480px;
-        margin: 0 auto;
-      }
-
-      .prova-screen-card:nth-child(1) {
-        width: 288px;
-        height: 186px;
-        left: 0;
-        top: 0;
-      }
-
-      .prova-screen-card:nth-child(2) {
-        width: 312px;
-        height: 201px;
-        left: 140px;
-        top: 110px;
-      }
-
-      .prova-screen-card:nth-child(3) {
-        width: 264px;
-        height: 174px;
-        left: 10px;
-        top: 230px;
-      }
-
-      .ct-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-
-      .f-row {
-        grid-template-columns: 1fr;
-      }
-
-      footer {
-        padding: 40px 24px;
-      }
-
-      .foot-top {
-        flex-direction: column;
-        gap: 24px;
-      }
-
-      .foot-links {
-        justify-content: center;
-      }
-
-      #cur,
-      #cur-ring {
-        display: none;
-      }
-
-      body {
-        cursor: auto;
-      }
-
-      .btn,
-      .pain-item,
-      .n8n-node,
-      .foot-links a {
-        cursor: pointer;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .pain-item {
-        grid-template-columns: 72px 1fr;
-        gap: 20px;
-        padding: 22px 20px;
-      }
-
-      .pain-n {
-        font-size: 2.8rem;
-      }
-    }
-
-    /* ═════════════════════════════════════
-       PROBLEMA BACKGROUND & ANIMATION
-    ═════════════════════════════════════ */
-    #problema {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .prob-bg-img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-      transform: scale(1.02);
-      will-change: transform;
-    }
-
-    .prob-bg-mask {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(to bottom, var(--bg) 0%, rgba(9, 9, 16, 0.05) 15%, rgba(9, 9, 16, 0.05) 100%);
-      transform: scale(1.02);
-      will-change: transform;
-    }
-
-    #problema>.wrap {
-      position: relative;
-      z-index: 2;
-    }
-
-    @media (max-width: 720px) {
-      body::before {
-        background-size: 36px 36px;
-      }
-
-      .section {
-        padding: 72px 18px;
-      }
-
-      section,
-      footer,
-      .hero-outer {
-        scroll-margin-top: 112px;
-      }
-
-      .wrap {
-        width: 100%;
-      }
-
-      #nav {
-        top: 12px;
-        left: 12px;
-        right: 12px;
-        width: auto;
-        transform: none;
-        padding: 10px 14px;
-        border-radius: 28px;
-      }
-
-      #nav.s {
-        top: 8px;
-        padding: 10px 14px;
-      }
-
-      .nav-left,
-      .nav-right {
-        gap: 14px;
-        min-width: 0;
-      }
-
-      .nav-w {
-        width: 100%;
-        min-width: 0;
-      }
-
-      .logo-img {
-        height: 28px;
-      }
-
-      .nav-btn-w {
-        min-height: 42px;
-        padding: 10px 16px;
-        font-size: 0.84rem;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        max-width: calc(100vw - 118px);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-
-      .hero-outer {
-        min-height: 100svh;
-        padding: 116px 18px 76px;
-      }
-
-      .hero-bg {
-        object-position: center top;
-      }
-
-      .hero-content {
-        max-width: 32rem;
-      }
-
-      .hero-h1 {
-        width: 100%;
-        max-width: 20rem;
-        font-size: 2rem;
-        line-height: 1.08;
-        letter-spacing: 0;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 20px;
-      }
-
-      .hero-h1 .line-rev {
-        display: block;
-        overflow: visible;
-        padding-bottom: 0;
-        margin-bottom: 0;
-      }
-
-      .hero-h1 .line-rev>span {
-        display: block;
-        max-width: 100%;
-        white-space: normal !important;
-      }
-
-      .hero-sub {
-        font-size: 1rem;
-        line-height: 1.55;
-        margin-bottom: 32px;
-      }
-
-      .btn,
-      .btn-w,
-      .f-btn {
-        min-height: 46px;
-        cursor: pointer;
-      }
-
-      .hero-logos-wrapper {
-        bottom: 20px;
-      }
-
-      .hero-powered-by {
-        font-size: 0.58rem;
-      }
-
-      .bento-header {
-        margin-bottom: 34px;
-      }
-
-      .bento-title {
-        font-size: 2rem;
-        letter-spacing: 0;
-      }
-
-      .bento-subtitle {
-        font-size: 1rem;
-        line-height: 1.62;
-      }
-
-      .bento-subtitle .highlight {
-        white-space: normal;
-      }
-
-      .bento-grid {
-        gap: 14px;
-      }
-
-      .bento-card {
-        min-height: 168px;
-        padding: 28px 22px;
-        border-radius: 14px;
-      }
-
-      .bento-card h3 {
-        font-size: 3.2rem;
-        top: 12px;
-        right: 18px;
-      }
-
-      .bento-card p {
-        font-size: 1rem;
-        line-height: 1.52;
-        margin-top: 46px;
-      }
-
-      #solucao {
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-
-      #solucao .wrap {
-        padding: 36px 18px;
-        border-radius: 18px;
-      }
-
-      .sol-grid {
-        gap: 18px;
-      }
-
-      .sol-card {
-        border-radius: 12px;
-      }
-
-      .sol-card-text {
-        padding: 26px 22px;
-      }
-
-      .sol-card-img-wrap {
-        height: 210px;
-      }
-
-      .prova-grid {
-        gap: 30px;
-        text-align: left;
-      }
-
-      .prova-text-col {
-        gap: 28px;
-      }
-
-      .stat-num {
-        font-size: 4.15rem;
-        letter-spacing: 0;
-      }
-
-      .stat-lbl {
-        line-height: 1.35;
-      }
-
-      .prova-sep-h {
-        width: 100%;
-        margin: 20px 0;
-        background: linear-gradient(to right, rgba(0, 0, 0, 0.12), transparent);
-      }
-
-      .prova-body h2 {
-        font-size: 1.7rem;
-        letter-spacing: 0;
-      }
-
-      .prova-body p {
-        font-size: 0.98rem;
-      }
-
-      .prova-screens {
-        display: grid;
-        gap: 14px;
-        height: auto;
-        max-width: none;
-        perspective: none;
-      }
-
-      .prova-screen-card,
-      .prova-screen-card:nth-child(1),
-      .prova-screen-card:nth-child(2),
-      .prova-screen-card:nth-child(3) {
-        position: relative;
-        top: auto;
-        left: auto;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 10;
-        transform: none !important;
-      }
-
-      .prova-screen-card:hover {
-        transform: none !important;
-      }
-
-      .como-title {
-        font-size: 2rem;
-        letter-spacing: 0;
-        margin-bottom: 36px;
-      }
-
-      .step-ref {
-        padding: 24px 0;
-      }
-
-      .step-ref-title {
-        font-size: 1.32rem;
-      }
-
-      .step-ref-desc-wrap {
-        gap: 12px;
-      }
-
-      #cta {
-        background-attachment: scroll;
-      }
-
-      .cta-big {
-        font-size: 2.7rem;
-        letter-spacing: 0;
-      }
-
-      .cta-in h2 {
-        font-size: 1.35rem;
-        letter-spacing: 0;
-      }
-
-      #cta .btn {
-        width: 100%;
-        max-width: 340px;
-        justify-content: center;
-        white-space: normal;
-        padding: 15px 20px !important;
-        line-height: 1.25;
-      }
-
-      #contato {
-        padding: 72px 18px;
-      }
-
-      .ct-grid {
-        gap: 42px;
-      }
-
-      .ct-l h2,
-      .ct-r h2 {
-        font-size: 2.2rem;
-        letter-spacing: 0;
-      }
-
-      .ct-l p,
-      .ct-r p {
-        font-size: 1rem;
-        margin-bottom: 30px;
-      }
-
-      #contato form {
-        gap: 16px;
-      }
-
-      .fld input,
-      .fld textarea,
-      .fld select {
-        min-height: 46px;
-        font-size: 16px;
-      }
-
-      .consent-text {
-        font-size: 0.82rem;
-      }
-
-      .f-btn {
-        width: 100%;
-        align-self: stretch;
-      }
-
-      .ct-photo {
-        height: 220px;
-        margin-bottom: 30px;
-      }
-
-      .ct-logos {
-        gap: 22px;
-      }
-
-      .ct-logos img {
-        height: 22px;
-      }
-
-      footer {
-        padding: 36px 18px;
-      }
-
-      .foot-links {
-        flex-wrap: wrap;
-        gap: 16px 22px;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .hero-h1 {
-        max-width: 17.5rem;
-        font-size: 1.72rem;
-      }
-
-      .nav-btn-w {
-        padding: 9px 13px;
-        font-size: 0.78rem;
-      }
-
-      .logo-img {
-        height: 25px;
-      }
-
-      .stat-num {
-        font-size: 3.55rem;
-      }
-
-      .cta-big {
-        font-size: 2.35rem;
-      }
-
-      .ct-l h2,
-      .ct-r h2,
-      .bento-title,
-      .como-title {
-        font-size: 1.86rem;
-      }
+    @media (max-width: 768px) {
+      nav, .nav-w { width: calc(100% - 24px); }
+      .nav-links { display: none; }
+      .section, .feat-section { padding: 70px 20px; }
+      .bento-grid { grid-template-columns: 1fr; }
+      .f-row { grid-template-columns: 1fr; }
+      #nav { width: calc(100% - 24px); padding: 10px 16px; }
+      .hero-outer { padding: 110px 20px 70px; }
     }
   </style>
 </head>
@@ -2550,7 +1836,7 @@
 
   <div id="cur"></div>
 
-  <!-- ═══════ NAVBAR ═══════ -->
+  <!-- ═══════ NAVBAR COM MENU DROPDOWN DE FUNCIONALIDADES ═══════ -->
   <nav id="nav">
     <div class="nav-w">
       <div class="nav-left">
@@ -2558,165 +1844,389 @@
           <img class="logo-img" src="logo-branca.png" alt="Kyp" />
         </a>
         <div class="nav-links">
-          <a href="#problema" class="nav-link">Diagnóstico <span>▼</span></a>
-          <a href="#solucao" class="nav-link">Soluções <span>▼</span></a>
-          <a href="#kyphiring" class="nav-link">KypHiring <span>▼</span></a>
+          <!-- Dropdown Funcionalidades -->
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-btn">
+              Funcionalidades <span>▼</span>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="#recrutamento" class="nav-drop-item">
+                <span class="nav-drop-icon">🎯</span> Recrutamento &amp; Seleção (ATS)
+              </a>
+              <a href="#admissao" class="nav-drop-item">
+                <span class="nav-drop-icon">📋</span> Admissão Digital
+              </a>
+              <a href="#assinatura" class="nav-drop-item">
+                <span class="nav-drop-icon">🖋️</span> Assinatura Eletrônica Própria
+              </a>
+              <a href="#comportamental" class="nav-drop-item">
+                <span class="nav-drop-icon">📊</span> Avaliação Comportamental (5 Eixos)
+              </a>
+              <a href="#maia" class="nav-drop-item">
+                <span class="nav-drop-icon">🤖</span> M.A.I.A. (Entrevista por IA)
+              </a>
+              <a href="#cargos-salarios" class="nav-drop-item">
+                <span class="nav-drop-icon">💼</span> Cargos e Salários
+              </a>
+            </div>
+          </div>
+
+          <a href="#diferencial" class="nav-link">O Diferencial</a>
+          <a href="#sobre" class="nav-link">Sobre a Kyp</a>
         </div>
       </div>
       <div class="nav-right">
-        <a href="#contato" class="nav-link">Entrar</a>
-        <a href="#contato" class="nav-btn-w">Falar conosco</a>
+        <a href="https://app.kyp.com.br/auth" target="_blank" rel="noopener noreferrer" class="nav-link">Entrar</a>
+        <a href="#contato" class="nav-btn-w">Agendar demonstração</a>
       </div>
     </div>
   </nav>
 
-  <!-- ═══════ HERO ═══════ -->
+  <!-- ═══════ HERO (TEXTO COMERCIAL E LARGURA AJUSTADA MAX-WIDTH 480PX) ═══════ -->
   <div class="hero-outer" id="hero">
     <img src="Fotos e Vídeos/Capa.jpg" alt="Background Natureza" class="hero-bg" loading="eager" />
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-
+      <span class="hero-tag">
+        <span class="hero-tag-dot"></span> Operações de RH &amp; People Unificadas
+      </span>
 
       <h1 class="hero-h1 fi d1" style="font-weight: 300;">
-        <span class="line-rev"><span style="white-space: nowrap;">Você tem os <strong
-              style="font-weight: 800;">processos.</strong></span></span><br />
-        <span class="line-rev"><span style="white-space: nowrap;">Nós os tornamos <strong
-              style="font-weight: 800;">inteligentes</strong></span></span>
+        <span class="line-rev"><span style="white-space: nowrap;">Do recrutamento ao <strong
+              style="font-weight: 800;">contrato assinado.</strong></span></span><br />
+        <span class="line-rev"><span style="white-space: nowrap;">Seu RH em <strong
+              style="font-weight: 800;">uma só plataforma.</strong></span></span>
       </h1>
+
+      <!-- TEXTO DO HERO FOCADO EM BENEFÍCIOS -->
       <p class="hero-sub fi d2">
-        Fluxos automatizados, agentes de IA e Governança para sua empresa.
+        Do currículo ao crachá — sem sair da plataforma, sem planilhas paralelas, sem dados perdidos.
       </p>
 
-      <div class="fi d3">
-        <a href="#contato" class="btn-w">
-          Fale conosco
-        </a>
-      </div>
-    </div>
+      <!-- Startup Program Badges no Viewport Inicial -->
+      <div class="fi d3" style="display:flex; flex-direction:column; align-items:center; gap:16px; margin-bottom:28px;">
+        <div class="hero-startups-row">
+          <div class="startup-badge">
+            <img src="Fotos e Vídeos/claude-logo-estrela.png" alt="Claude AI" class="startup-badge-logo" />
+            <span class="startup-badge-text"><strong>Claude</strong> for Startups</span>
+          </div>
+          <div class="startup-badge">
+            <svg class="startup-badge-logo" viewBox="0 0 24 24" width="20" height="20">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+            <span class="startup-badge-text"><strong>Google</strong> for Startups</span>
+          </div>
+        </div>
 
-    <!-- Logos at bottom -->
-    <div class="hero-logos-wrapper fi d4">
-      <span class="hero-powered-by">powered by</span>
-      <div class="hero-logos">
-        <img src="Fotos e Vídeos/Claude_AI_logo.svg.png" class="hero-logo-img" alt="Claude AI" loading="lazy" />
-        <img src="Fotos e Vídeos/lovable-logo.svg" class="hero-logo-img" alt="Lovable" loading="lazy" />
-        <img src="Fotos e Vídeos/N8n-logo-new.svg.png" class="hero-logo-img" alt="n8n" loading="lazy" />
-        <img src="Fotos e Vídeos/Supabase_Logo.png" class="hero-logo-img" alt="Supabase" loading="lazy" />
-        <img src="Fotos e Vídeos/Vercel_logo_2025.svg" class="hero-logo-img" alt="Vercel" loading="lazy" />
+        <a href="#contato" class="btn-w">
+          Agendar demonstração
+        </a>
       </div>
     </div>
   </div>
 
 
-  <!-- ═══════ PROBLEMA ═══════ -->
-  <section id="problema" class="section light-theme" style="background-color: #f9f4eb;">
+  <!-- ═══════ SEÇÃO: O DIFERENCIAL KYP (CONTINUIDADE DE DADOS) ═══════ -->
+  <section id="diferencial" class="section light-theme" style="background-color: #f9f4eb;">
     <div class="wrap">
-      <!-- Bento Grid Redesign -->
       <div class="bento-header fi">
-        <h2 class="bento-title">Sua empresa funciona bem.<br />Mas <strong style="font-weight: 800;">deixa
-            dinheiro</strong> na mesa todo mês.</h2>
-        <p class="bento-subtitle">A maioria das empresas de pequeno e médio porte funciona bem. Mas <span
-            class="highlight">perde receita</span> por
-          conta de processos lentos, retrabalho e decisões sem informação suficiente.</p>
+        <h2 class="bento-title">Por que escolher a Kyp?<br />Uma suíte <strong style="font-weight: 800;">100% integrada</strong>.</h2>
+        <p class="bento-subtitle">Ferramentas pontuais do mercado exigem copiar e colar informações. Na Kyp, <span
+            class="highlight">uma etapa dispara a próxima</span> sem reentrada manual nem custo por integração externa.</p>
       </div>
 
       <div class="bento-grid">
         <div class="bento-card fi d1">
           <h3>01</h3>
-          <p>Equipe atolada em tarefas manuais que se repetem toda semana.</p>
+          <p>Aprovar uma admissão gera e dispara o contrato para assinatura eletrônica automaticamente.</p>
         </div>
         <div class="bento-card fi d2">
           <h3>02</h3>
-          <p>Falta de visão clara sobre o que está funcionando e o que não está.</p>
+          <p>Estrutura de cargos e salários alimenta diretamente a proposta do candidato na admissão.</p>
         </div>
         <div class="bento-card fi d3">
           <h3>03</h3>
-          <p>Novos colaboradores levam tempo demais pra começar a produzir.</p>
+          <p>Currículo parseado vira nota de aderência, roteiro M.A.I.A. e perfil ranqueado no banco de talentos.</p>
         </div>
         <div class="bento-card fi d4">
           <h3>04</h3>
-          <p>Processos que travam quando uma pessoa específica está ausente.</p>
+          <p>Dados da sua empresa isolados dos outros clientes com segurança absoluta no nível do banco de dados (RLS).</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════ SOLUÇÃO ═══════ -->
-  <section id="solucao" class="section">
+
+  <!-- ═══════ SEÇÃO: SOBRE A KYP (TECNOLOGIA E IA PARA GESTÃO DE PESSOAS) ═══════ -->
+  <section id="sobre" class="section sobre-section">
     <div class="wrap">
-      <h2
-        style="font-family:'Montserrat', sans-serif;font-weight:300;font-size:clamp(1.9rem,4vw,2.9rem);letter-spacing:-.04em;margin-bottom:14px;"
-        class="fi d1">
-        Trabalhamos junto com<br />a sua equipe, não no lugar dela.
-      </h2>
-      <p style="font-family:'Montserrat', sans-serif;font-weight:300;color:var(--sub);max-width:560px;margin-bottom:52px;font-size:1rem;line-height:1.78;"
-        class="fi d2">
-        A Kyp entende como a operação funciona de fato e entrega soluções que se encaixam no que você já tem.
-      </p>
-      <div class="sol-grid">
-        <div class="sol-card fi d1">
-          <div class="sol-card-text">
-            <div class="sol-card-header">
-              <div class="sol-badge-num">1</div>
-              <div class="sol-badge-arrow">→</div>
-            </div>
-            <h3>Diagnóstico</h3>
-            <p>Mapeamos sua operação e apontamos onde há mais oportunidade de ganho com menos esforço.</p>
-          </div>
-          <div class="sol-card-img-wrap">
-            <img src="Fotos e Vídeos/solucao-card-1.jpg" alt="Diagnóstico" class="sol-card-img" />
+      <div class="sobre-grid">
+        <div class="sobre-content fi">
+          <span class="lbl">Quem Somos</span>
+          <h2 class="sobre-title">Kyp: tecnologia e IA para simplificar a gestão de pessoas</h2>
+
+          <div class="sobre-text">
+            <p>
+              A Kyp nasceu para resolver um problema real das pequenas e médias empresas brasileiras: processos de RH manuais, fragmentados e sem inteligência de dados.
+            </p>
+            <p>
+              Somos uma HR tech que integra, em um único ecossistema, recrutamento e seleção, análise comportamental, assinatura digital e admissão digital, automatizando o que hoje consome tempo e energia das equipes de RH.
+            </p>
+            <p>
+              Somos uma startup que cresceu dentro do <strong>EcoHub, da Universidade Positivo</strong>, e hoje fazemos parte do <strong>Vale do Pinhão</strong>, o ecossistema de inovação de Curitiba.
+            </p>
+            <p>
+              Somos membros do <strong>Claude for Startups</strong>, programa da Anthropic, e do <strong>Google for Startups</strong>, o que nos dá acesso a tecnologia de ponta em inteligência artificial para construir soluções robustas, seguras e escaláveis.
+            </p>
+            <p class="sobre-highlight">
+              Estamos construindo a Kyp para ser referência em automação de RH com IA para empresas brasileiras.
+            </p>
           </div>
         </div>
 
-        <div class="sol-card fi d2">
-          <div class="sol-card-text">
-            <div class="sol-card-header">
-              <div class="sol-badge-num">2</div>
-              <div class="sol-badge-arrow">→</div>
+        <div class="sobre-visual fi d2">
+          <div class="sobre-card">
+            <div class="sobre-img-container">
+              <img src="Fotos e Vídeos/skyline-curitiba.jpg" alt="Curitiba • Vale do Pinhão" class="sobre-img" loading="lazy" />
+              <div class="sobre-img-badge">📍 Curitiba • Vale do Pinhão</div>
             </div>
-            <h3>Automação de processos</h3>
-            <p>Configuramos agentes e ferramentas que eliminam etapas manuais e conectam os sistemas que sua empresa já
-              usa.</p>
-          </div>
-          <div class="sol-card-img-wrap">
-            <img src="Fotos e Vídeos/solucao-card-2" alt="Automação de processos" class="sol-card-img" />
-          </div>
-        </div>
-
-        <div class="sol-card fi d3">
-          <div class="sol-card-text">
-            <div class="sol-card-header">
-              <div class="sol-badge-num">3</div>
-              <div class="sol-badge-arrow">✓</div>
+            <div class="sobre-badges-grid">
+              <div class="sobre-badge-item">
+                <span class="sb-icon">🏛️</span>
+                <div>
+                  <strong>EcoHub</strong>
+                  <span>Universidade Positivo</span>
+                </div>
+              </div>
+              <div class="sobre-badge-item">
+                <span class="sb-icon">🚀</span>
+                <div>
+                  <strong>Vale do Pinhão</strong>
+                  <span>Ecossistema de Curitiba</span>
+                </div>
+              </div>
+              <div class="sobre-badge-item">
+                <img src="Fotos e Vídeos/claude-logo-estrela.png" alt="Claude" class="sb-logo" />
+                <div>
+                  <strong>Claude for Startups</strong>
+                  <span>Anthropic Program</span>
+                </div>
+              </div>
+              <div class="sobre-badge-item">
+                <svg class="sb-logo" viewBox="0 0 24 24" width="20" height="20">
+                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                </svg>
+                <div>
+                  <strong>Google for Startups</strong>
+                  <span>Global Accelerator</span>
+                </div>
+              </div>
             </div>
-            <h3>Gestão de pessoas</h3>
-            <p>Avaliação comportamental DISC para montar times mais equilibrados e contratar com mais critério.</p>
-          </div>
-          <div class="sol-card-img-wrap">
-            <img src="Fotos e Vídeos/solucao-card-3.jpg" alt="Gestão de pessoas" class="sol-card-img" />
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════ KYPHIRING ═══════ -->
-  <section id="kyphiring" class="section light-theme">
+
+  <!-- ═══════ SEÇÃO: PERFIL DE CLIENTE IDEAL (ICP) ═══════ -->
+  <section id="icp" class="section icp-section">
+    <div class="wrap">
+      <div class="bento-header fi">
+        <span class="lbl">Perfil de Empresa Ideal</span>
+        <h2 class="bento-title" style="color:#fff;">A Kyp foi construída para a sua empresa se...</h2>
+        <p class="bento-subtitle" style="color:var(--sub);">Se você reconhece algum destes cenários no seu dia a dia, a Kyp elimina o retrabalho na primeira semana.</p>
+      </div>
+
+      <div class="icp-grid">
+        <div class="icp-card fi d1">
+          <div class="icp-icon">📑</div>
+          <h3>Sua equipe ainda usa planilhas soltas</h3>
+          <p>Você precisa controlar prazos de admissão, envio de documentos e status de candidatos copiando dados entre tabelas.</p>
+        </div>
+        <div class="icp-card fi d2">
+          <div class="icp-icon">📧</div>
+          <h3>Processos no WhatsApp e E-mail</h3>
+          <p>O recrutamento começa numa vaga no LinkedIn, vira conversa no WhatsApp e os documentos chegam por e-mail sem histórico.</p>
+        </div>
+        <div class="icp-card fi d3">
+          <div class="icp-icon">🏢</div>
+          <h3>Múltiplos CNPJs ou Razões Sociais</h3>
+          <p>Sua empresa ou grupo econômico precisa gerenciar permissões por unidade com tabelas salariais e governança centralizadas.</p>
+        </div>
+        <div class="icp-card fi d4">
+          <div class="icp-icon">🤖</div>
+          <h3>Quer IA Real no RH Sem Complicação</h3>
+          <p>Você busca automação em triagem de currículos, entrevistas por voz e relatórios comportamentais em um só sistema.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════ ÁREA DEDICADA 1: RECRUTAMENTO & SELEÇÃO (ATS) ═══════ -->
+  <section id="recrutamento" class="feat-section">
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-info">
+          <span class="lbl fi">Módulo 01</span>
+          <h2 class="feat-title fi d1">Recrutamento &amp; Seleção (ATS)</h2>
+          <p class="feat-desc fi d2">
+            Centralize todo o funil de contratação. Publique vagas com fluxo de aprovação multinível, atraia talentos com uma página de carreiras pública por empresa e ranqueie candidatos automaticamente.
+          </p>
+          <ul class="feat-bullets fi d3">
+            <li>Funil visual Kanban configurável por vaga</li>
+            <li>Página de carreiras pública dedicada por empresa</li>
+            <li>Banco de talentos inteligente com busca e filtros avançados</li>
+            <li>Automação de e-mails de feedback e agendamento por etapa</li>
+          </ul>
+          <div class="fi d4">
+            <a href="#contato" class="btn btn-g">Conhecer o ATS <span class="arr">→</span></a>
+          </div>
+        </div>
+
+        <div class="feat-card-visual fi d2">
+          <span class="feat-badge-overlay">⚡ Funil Kanban &amp; Triagem IA</span>
+          <div style="font-family:'Montserrat', sans-serif; font-weight:700; font-size:1.1rem; color:#fff; margin-bottom:8px;">
+            Funil de Candidatos &amp; Triagem IA
+          </div>
+          <p style="font-size:0.88rem; color:var(--sub); margin-bottom:16px;">
+            Visualização em tempo real de posições abertas, candidatos em triagem e notas de aderência calculadas instantaneamente. <span style="color:#00e5ff; font-weight:500;">(Clique para ampliar 🔍)</span>
+          </p>
+          <img class="feat-img-zoom" src="Fotos e Vídeos/kyp-ats-funil.png" alt="Painel do ATS Kyp (Funil de Recrutamento)" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════ ÁREA DEDICADA 2: ADMISSÃO DIGITAL ═══════ -->
+  <section id="admissao" class="feat-section" style="background: var(--bg2);">
+    <div class="wrap">
+      <div class="feat-grid reverse">
+        <div class="feat-card-visual fi d2">
+          <span class="feat-badge-overlay">📄 Onboarding 100% Sem Papel</span>
+          <div style="font-family:'Montserrat', sans-serif; font-weight:700; font-size:1.1rem; color:#fff; margin-bottom:8px;">
+            Onboarding Digital Sem Papel
+          </div>
+          <p style="font-size:0.88rem; color:var(--sub); margin-bottom:16px;">
+            Envio de proposta, coleta de documentos e formulário de admissão em uma jornada 100% digital e amigável. <span style="color:#00e5ff; font-weight:500;">(Clique para ampliar 🔍)</span>
+          </p>
+          <img class="feat-img-zoom" src="Fotos e Vídeos/kyp-admissao-digital.png" alt="Painel da Admissão Digital Kyp" />
+        </div>
+
+        <div class="feat-info">
+          <span class="lbl fi">Módulo 02</span>
+          <h2 class="feat-title fi d1">Admissão Digital</h2>
+          <p class="feat-desc fi d2">
+            Do aceite da proposta ao colaborador ativo. Elimine planilhas paralelas, evite a perda de prazos e colete documentos com validação simplificada.
+          </p>
+          <ul class="feat-bullets fi d3">
+            <li>Envio de proposta conectada às tabelas salariais</li>
+            <li>Formulário de admissão direto no celular do candidato</li>
+            <li>Validação e conferência ágil de documentos</li>
+            <li>Disparo automático para a geração de contrato de trabalho</li>
+          </ul>
+          <div class="fi d4">
+            <a href="#contato" class="btn btn-g">Ver Admissão Digital <span class="arr">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════ ÁREA DEDICADA 3: ASSINATURA ELETRÔNICA PRÓPRIA ═══════ -->
+  <section id="assinatura" class="feat-section">
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-info">
+          <span class="lbl fi">Módulo 03</span>
+          <h2 class="feat-title fi d1">Assinatura Eletrônica Avançada</h2>
+          <p class="feat-desc fi d2">
+            Motor de assinatura <strong>construído internamente pela Kyp</strong> — sem pagar integrações de terceiros como Clicksign. Válido juridicamente conforme a Lei 14.063/2020 e MP 2.200-2/2001.
+          </p>
+          <ul class="feat-bullets fi d3">
+            <li>Trilha de auditoria imutável com eventos encadeados por hash</li>
+            <li>Assinatura em lote para documentos da equipe</li>
+            <li>Modelos reutilizáveis de contratos e aditivos</li>
+            <li>Página pública de verificação de autenticidade</li>
+          </ul>
+          <div class="fi d4">
+            <a href="#contato" class="btn btn-g">Testar Assinatura <span class="arr">→</span></a>
+          </div>
+        </div>
+
+        <div class="feat-card-visual fi d2">
+          <span class="feat-badge-overlay">🔒 Validade Jurídica • Lei 14.063/20</span>
+          <div style="font-family:'Montserrat', sans-serif; font-weight:700; font-size:1.1rem; color:#fff; margin-bottom:8px;">
+            Motor Interno Kyp &amp; Trilha Hash
+          </div>
+          <p style="font-size:0.88rem; color:var(--sub); margin-bottom:16px;">
+            Certificado de conclusão auditável com hash SHA-256 e validação pública de integridade do documento. <span style="color:#00e5ff; font-weight:500;">(Clique para ampliar 🔍)</span>
+          </p>
+          <img class="feat-img-zoom" src="Fotos e Vídeos/kyp-assinatura-digital.png" alt="Painel de Assinatura Eletrônica Kyp" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════ ÁREA DEDICADA 4: AVALIAÇÃO COMPORTAMENTAL DE 5 EIXOS ═══════ -->
+  <section id="comportamental" class="feat-section" style="background: var(--bg2);">
+    <div class="wrap">
+      <div class="feat-grid reverse">
+        <div class="feat-card-visual fi d2">
+          <span class="feat-badge-overlay">🧠 5 Eixos: D, I, S, C + Autodomínio</span>
+          <div style="font-family:'Montserrat', sans-serif; font-weight:700; font-size:1.1rem; color:#fff; margin-bottom:8px;">
+            Metodologia em 5 Eixos Comportamentais
+          </div>
+          <p style="font-size:0.88rem; color:var(--sub); margin-bottom:16px;">
+            Mede Dominância, Influência, Serenidade, Conformidade e o <strong>5º Eixo Exclusivo: Autodomínio</strong>. <span style="color:#00e5ff; font-weight:500;">(Clique para ampliar 🔍)</span>
+          </p>
+          <img class="feat-img-zoom" src="Fotos e Vídeos/kyp-teste-comportamental.png" alt="Painel da Avaliação Comportamental Kyp" />
+        </div>
+
+        <div class="feat-info">
+          <span class="lbl fi">Módulo 04</span>
+          <h2 class="feat-title fi d1">Avaliação Comportamental (5 Eixos)</h2>
+          <p class="feat-desc fi d2">
+            Metodologia proprietária da Kyp adaptada ao português coloquial brasileiro — sem jargão corporativo traduzido de fora. Monte times equilibrados e compare candidatos com o perfil ideal da vaga.
+          </p>
+          <ul class="feat-bullets fi d3">
+            <li>Medição dos 5 eixos: D, I, S, C e Autodomínio</li>
+            <li>Banco de adjetivos em linguagem natural brasileira</li>
+            <li>Criação de perfis ideais de cargo para comparação automática</li>
+            <li>Algoritmo próprio de aderência candidato-vaga</li>
+          </ul>
+          <div class="fi d4">
+            <a href="#contato" class="btn btn-g">Conhecer a Avaliação <span class="arr">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════ ÁREA DEDICADA 5: M.A.I.A. (ENTREVISTA POR IA POR VOZ) ═══════ -->
+  <section id="maia" class="feat-section light-theme" style="background-color: #f9f4eb;">
     <div class="wrap">
       <div class="kh-grid">
-
-        <!-- Left: Text -->
         <div class="kh-text">
-          <span class="lbl fi">Novo produto</span>
+          <span class="lbl fi">Módulo 05 • Gemini Live Engine</span>
           <h2 class="kh-title fi d1">
-            <strong>Kyp<span class="gt">Hiring</span></strong><br />
-            O ATS AI-Native para o <br /><strong>RH brasileiro.</strong>
+            <strong>M.A.I.A.</strong><br />
+            Entrevista por IA por voz <br /><strong>em tempo real.</strong>
           </h2>
           <p class="kh-sub fi d2">
-            Recrutamento com inteligência artificial de ponta a ponta. O KypHiring lê currículos,
-            ranqueia candidatos por compatibilidade e agenda entrevistas, enquanto seu time foca
-            no que importa: as pessoas.
+            Entrevistadora por voz (conversação em tempo real, não um chatbot de texto) que conduz entrevistas estruturadas seguindo o roteiro do recrutador. Economize 80% do tempo de triagem inicial.
           </p>
 
           <div class="kh-feats fi d3">
@@ -2728,8 +2238,8 @@
                 </svg>
               </div>
               <div>
-                <h3>Triagem inteligente</h3>
-                <p>A IA analisa cada currículo e entrega um ranking por compatibilidade com a vaga, em minutos.</p>
+                <h3>Parecer Completo &amp; Gravação</h3>
+                <p>Pontuação por critério, pontos fortes, lacunas e gravação de áudio/vídeo com transcrição sincronizada.</p>
               </div>
             </div>
             <div class="kh-feat">
@@ -2741,8 +2251,8 @@
                 </svg>
               </div>
               <div>
-                <h3>Pipeline visual</h3>
-                <p>Acompanhe cada candidato da triagem à proposta, sem planilhas paralelas nem e-mails perdidos.</p>
+                <h3>Indicadores de Confiabilidade</h3>
+                <p>Status de conexão, trocas de áudio e alerta objetivo se o candidato mudou o foco da janela.</p>
               </div>
             </div>
             <div class="kh-feat">
@@ -2753,130 +2263,185 @@
                 </svg>
               </div>
               <div>
-                <h3>Entrevistas sem fricção</h3>
-                <p>Agendamento automático e comunicação com candidatos direto pelo WhatsApp e e-mail.</p>
+                <h3>Decisão Final 100% Humana (LGPD Art. 20)</h3>
+                <p>Nenhuma decisão automatizada isolada: a IA recomenda e orienta, mas a decisão final cabe ao RH.</p>
               </div>
             </div>
           </div>
 
           <div class="fi d4">
             <a href="#contato" class="btn btn-g">
-              Quero conhecer o KypHiring <span class="arr">→</span>
+              Testar M.A.I.A. Standalone <span class="arr">→</span>
             </a>
           </div>
         </div>
 
-        <!-- Right: Product screenshot -->
         <div class="kh-mock fi d2">
-          <div class="kh-float kh-float-1"><span class="gt">Visão geral de vagas</span> em tempo real</div>
-
-          <img class="kh-shot" src="Fotos e Vídeos/kyp-hiring-janela.png"
-            alt="Tela do KypHiring com visão geral de vagas, recrutadores e candidatos no funil" loading="lazy" />
-
-          <div class="kh-float kh-float-2">✓ Candidatos no funil, da triagem à proposta</div>
+          <div class="kh-float kh-float-1"><span class="gt">Gemini Live Voice</span> Ativo</div>
+          <img class="kh-shot feat-img-zoom" src="Fotos e Vídeos/kyp-maia.png" alt="M.A.I.A. Entrevista por voz (Gemini Live)" loading="lazy" />
+          <div class="kh-float kh-float-2">✓ Parecer &amp; Gravação Prontos</div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ═══════ PROVA SOCIAL ═══════ -->
-  <section id="prova" class="section">
+
+  <!-- ═══════ ÁREA DEDICADA 6: CARGOS, SALÁRIOS & GOVERNANÇA ═══════ -->
+  <section id="cargos-salarios" class="feat-section">
     <div class="wrap">
-      <div class="prova-grid">
-        <!-- Left: Text -->
-        <div class="prova-text-col">
-          <div class="fi">
-            <span class="stat-num">R$&nbsp;<span class="count-up" data-start="90" data-end="170"
-                data-duration="4000">170</span>M</span>
-            <span class="stat-lbl">em redução de custos entregues</span>
-          </div>
-
-          <div class="prova-body fi d2">
-            <h2><strong>Resultado real.</strong><br />Para <strong>empresas reais.</strong></h2>
-            <p>Esse número veio de empresas que tinham processos funcionando no limite. Com ajustes
-              pontuais e as ferramentas referências no mercado, o resultado apareceu rápido e em paralelo com o
-              andamneto do processo.</p>
+      <div class="feat-grid">
+        <div class="feat-info">
+          <span class="lbl fi">Módulo 06 &amp; 07</span>
+          <h2 class="feat-title fi d1">Cargos, Salários &amp; Governança</h2>
+          <p class="feat-desc fi d2">
+            Estrutura organizacional completa (cargos, setores, tabelas salariais e apoio a grupos multi-empresas). Controle de permissões granulares por módulo (RBAC) e saldo transparente de créditos de IA.
+          </p>
+          <ul class="feat-bullets fi d3">
+            <li>Alimentação automática das propostas de contratação</li>
+            <li>Gestão centralizada de colaboradores ativos</li>
+            <li>Permissões granulares de acesso por usuário e módulo</li>
+            <li>Controle e gestão de créditos de IA por empresa</li>
+          </ul>
+          <div class="fi d4">
+            <a href="#contato" class="btn btn-g">Conhecer a Governança <span class="arr">→</span></a>
           </div>
         </div>
 
-        <!-- Right: Overlapping screenshots -->
-        <div class="prova-screens fi d3">
-          <div class="prova-screen-card">
-            <img src="Fotos e Vídeos/Tela lovable código.png" alt="Tela Lovable - Editor de código" loading="lazy" />
+        <div class="feat-card-visual fi d2">
+          <span class="feat-badge-overlay">🏢 Multi-Empresas &amp; RLS PostgreSQL</span>
+          <div style="font-family:'Montserrat', sans-serif; font-weight:700; font-size:1.1rem; color:#fff; margin-bottom:8px;">
+            Estrutura &amp; Permissões Multi-Tenant
           </div>
-          <div class="prova-screen-card">
-            <img src="Fotos e Vídeos/Tela Supabase.png" alt="Tela Supabase - Banco de dados" loading="lazy" />
-          </div>
-          <div class="prova-screen-card">
-            <img src="Fotos e Vídeos/Tela Terminal Claude Code.png" alt="Tela Claude Code - Terminal" loading="lazy" />
-          </div>
+          <p style="font-size:0.88rem; color:var(--sub); margin-bottom:16px;">
+            Gestão de grupos econômicos, razões sociais e controle de acesso granular por papel. <span style="color:#00e5ff; font-weight:500;">(Clique para ampliar 🔍)</span>
+          </p>
+          <img class="feat-img-zoom" src="Fotos e Vídeos/kyp-tabela-salarial.png" alt="Painel de Cargos e Salários Kyp" />
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- ═══════ COMO FUNCIONA ═══════ -->
-  <section id="como" class="section light-theme">
+  <!-- ═══════ SEÇÃO: PLANOS & PRECIFICAÇÃO SINAL ═══════ -->
+  <section id="planos" class="section planos-section">
     <div class="wrap">
-      <div class="como-container">
+      <div class="bento-header fi">
+        <span class="lbl">Precificação Transparente</span>
+        <h2 class="bento-title" style="color:#fff;">Investimento sob medida para o tamanho da sua empresa</h2>
+        <p class="bento-subtitle" style="color:var(--sub);">Preços flexíveis calculados por colaborador ativo com todos os módulos essenciais inclusos.</p>
+      </div>
 
-        <h2 class="como-title fi d1">
-          Do <strong>diagnóstico</strong> ao <strong>resultado</strong>.<br />Em quatro passos.
-        </h2>
+      <div class="planos-box fi d1">
+        <span class="planos-tag">Planos Sob Medida</span>
+        <h3 class="planos-title">Sem surpresas no final do mês</h3>
+        <p class="planos-desc">
+          Na Kyp, você contrata uma suíte unificada de RH sem custos ocultos de integração, pagamento adicional por documento assinado ou limites arbitrários.
+        </p>
 
-        <div class="steps-ref-list">
-          <div class="step-ref fi d1">
-            <h3 class="step-ref-title">Conversa inicial</h3>
-            <div class="step-ref-desc-wrap">
-              <span class="step-ref-arrow">→</span>
-              <p class="step-ref-desc">30 minutos para entender sua operação e ver onde faz mais sentido começar.</p>
-            </div>
+        <div class="planos-pills">
+          <div class="planos-pill">✓ Precificação por colaborador ativo</div>
+          <div class="planos-pill">✓ Assinatura eletrônica inclusa</div>
+          <div class="planos-pill">✓ Multi-empresas e RLS PostgreSQL</div>
+          <div class="planos-pill">✓ Suporte dedicado em português</div>
+        </div>
+
+        <a href="#contato" class="btn btn-g" style="font-size:1.02rem; padding:16px 40px;">
+          Solicitar Orçamento Personalizado <span class="arr">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════ SEÇÃO: FAQ (DÚVIDAS FREQUENTES) ═══════ -->
+  <section id="faq" class="section faq-section">
+    <div class="wrap">
+      <div class="bento-header fi">
+        <span class="lbl">Dúvidas Frequentes</span>
+        <h2 class="bento-title" style="color:#fff;">Perguntas respondidas de forma transparente</h2>
+        <p class="bento-subtitle" style="color:var(--sub);">Tudo o que você precisa saber antes de agendar uma demonstração.</p>
+      </div>
+
+      <div class="faq-accordion fi d1">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>A Kyp substitui totalmente o envio de documentos físicos na admissão?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Sim! A admissão digital da Kyp permite o envio de propostas, preenchimento de cadastro e upload de documentos diretamente pelo celular ou computador do colaborador, eliminando papelada e deslocamentos.</p>
           </div>
-          <div class="step-ref fi d2">
-            <h3 class="step-ref-title">Plano de ação</h3>
-            <div class="step-ref-desc-wrap">
-              <span class="step-ref-arrow">→</span>
-              <p class="step-ref-desc">Apresentamos o que encontramos e o que recomendamos, com prazo e custo estimado.
-              </p>
-            </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>A Assinatura Eletrônica da Kyp é válida juridicamente no Brasil?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Sim. O motor de assinatura próprio da Kyp foi desenvolvido em estrita conformidade com a Lei 14.063/2020 e MP 2.200-2/2001, gerando trilhas de auditoria imutáveis com hash SHA-256 e página pública de verificação.</p>
           </div>
-          <div class="step-ref fi d3">
-            <h3 class="step-ref-title">Implementação</h3>
-            <div class="step-ref-desc-wrap">
-              <span class="step-ref-arrow">→</span>
-              <p class="step-ref-desc">Colocamos tudo pra funcionar e treinamos a equipe até virar rotina.</p>
-            </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Como funciona a entrevistadora por voz M.A.I.A.?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>A M.A.I.A. (Gemini Live Engine) conduz entrevistas de triagem por voz em tempo real baseadas no roteiro e critérios definidos pelo recrutador, gerando transcrição, gravação e parecer técnico automático.</p>
           </div>
-          <div class="step-ref fi d4">
-            <h3 class="step-ref-title">Acompanhamento</h3>
-            <div class="step-ref-desc-wrap">
-              <span class="step-ref-arrow">→</span>
-              <p class="step-ref-desc">Monitoramos os resultados e ajustamos o que for preciso no caminho.</p>
-            </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Minha empresa possui mais de um CNPJ. O sistema é multi-empresas?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Com certeza. A arquitetura multi-tenant da Kyp permite gerenciar múltiplos CNPJs, razões sociais e filiais na mesma conta, com isolamento absoluto de dados via Row Level Security (RLS).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Preciso de equipe técnica ou TI para implementar a Kyp?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Não. A Kyp é uma plataforma SaaS 100% em nuvem e pronta para uso. O onboarding da sua equipe é realizado em poucas horas com suporte da nossa equipe especializada.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Como funciona a precificação da plataforma?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Precificamos por volume de colaboradores ativos e pelos módulos contratados. Agende uma conversa rápida e apresentaremos uma proposta sob medida para sua empresa.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- ═══════ CTA FINAL ═══════ -->
   <section id="cta" class="section">
     <div class="cta-glow"></div>
     <div class="cta-in">
       <div class="cta-big fi">
-        <span style="color: #f9f4eb;">R$ 170 milhões</span><br />
-        <span style="font-weight: 300;">economizados.</span>
+        <span style="color: #f9f4eb;">Operações de RH</span><br />
+        <span style="font-weight: 300;">100% integradas.</span>
       </div>
-      <h2 class="fi d1">O próximo pode ser seu.</h2>
-      <p class="fi d2">Comece pela conversa. Sem custo, sem compromisso.</p>
+      <h2 class="fi d1">Conheça a suíte Kyp em ação.</h2>
+      <p class="fi d2">Agende uma demonstração prática com nossos especialistas.</p>
       <div class="fi d3">
         <a href="#contato" class="btn btn-g" style="font-size:1rem;padding:17px 48px;">
-          Quero automatizar meu negócio <span class="arr">→</span>
+          Agendar demonstração <span class="arr">→</span>
         </a>
       </div>
     </div>
   </section>
+
 
   <!-- ═══════ CONTATO ═══════ -->
   <section id="contato" class="section">
@@ -2884,40 +2449,24 @@
       <div class="ct-grid">
         <!-- Left: Form -->
         <div class="ct-l fi">
-          <h2>Agendar conversa</h2>
+          <h2>Agendar demonstração</h2>
           <p>Preencha o formulário e nossa equipe entrará em contato em breve.</p>
 
           <form id="contactForm" onsubmit="handleSubmit(event)">
             <div class="f-row">
               <div class="fld">
-                <label>Primeiro nome *</label>
-                <input type="text" name="nome" placeholder="Primeiro nome" required />
-              </div>
-              <div class="fld">
-                <label>Sobrenome *</label>
-                <input type="text" name="sobrenome" placeholder="Sobrenome" required />
-              </div>
-            </div>
-            <div class="f-row">
-              <div class="fld">
-                <label>Como nos conheceu? *</label>
-                <select name="como_conheceu" required>
-                  <option value="" disabled selected>Selecione uma opção...</option>
-                  <option value="google">Google</option>
-                  <option value="linkedin">LinkedIn</option>
-                  <option value="indicacao">Indicação</option>
-                  <option value="outros">Outros</option>
-                </select>
+                <label>Nome completo *</label>
+                <input type="text" name="nome" placeholder="Seu nome completo" required />
               </div>
               <div class="fld">
                 <label>Nome da empresa *</label>
-                <input type="text" name="empresa" placeholder="Nome da empresa" required />
+                <input type="text" name="empresa" placeholder="Nome da sua empresa" required />
               </div>
             </div>
             <div class="f-row">
               <div class="fld">
                 <label>E-mail corporativo *</label>
-                <input type="email" name="email" placeholder="E-mail corporativo" required />
+                <input type="email" name="email" placeholder="seuemail@empresa.com.br" required />
               </div>
               <div class="fld">
                 <label>Telefone / WhatsApp *</label>
@@ -2925,18 +2474,23 @@
               </div>
             </div>
             <div class="fld">
-              <label>Conte-nos mais sobre seu caso de uso e como podemos ajudar</label>
-              <textarea name="mensagem" placeholder="Digite sua mensagem..."></textarea>
+              <label>Número de colaboradores</label>
+              <select name="tamanho_empresa">
+                <option value="" disabled selected>Selecione a faixa de colaboradores...</option>
+                <option value="1-20">1 a 20 colaboradores</option>
+                <option value="21-50">21 a 50 colaboradores</option>
+                <option value="51-200">51 a 200 colaboradores</option>
+                <option value="200+">Mais de 200 colaboradores</option>
+              </select>
             </div>
 
             <label class="consent-text">
               <input type="checkbox" required />
-              <span>Concordo em receber comunicações operacionais e de marketing (via ligação, texto ou e-mail). Taxas
-                podem ser aplicadas. *</span>
+              <span>Aceito receber comunicações e propostas da Kyp conforme a Política de Privacidade. Cancele quando quiser. *</span>
             </label>
 
             <button type="submit" class="f-btn">
-              Agendar uma conversa
+              Agendar demonstração
             </button>
           </form>
           <div id="formOk">
@@ -2949,22 +2503,10 @@
         <!-- Right: Visual & Logos -->
         <div class="ct-r fi d2">
           <h2>Veja a Kyp<br />em Ação</h2>
-          <p>Descubra como empresas otimizam suas operações</p>
+          <p>Descubra como a Kyp integra a gestão de RH do recrutamento à admissão digital</p>
 
-          <img class="ct-photo" src="Fotos e Vídeos/Tela Terminal Claude Code.png" alt="Tela Claude Code Terminal"
-            loading="lazy" />
+          <img class="ct-photo" src="Fotos e Vídeos/kyp-veja-em-acao.png" alt="Veja a Kyp em Ação" loading="lazy" />
 
-          <div class="ct-powered">
-            <span class="ct-powered-text">POWERED BY</span>
-            <div class="ct-logos">
-              <img src="Fotos e Vídeos/Claude_AI_logo.svg.png" alt="Claude AI" loading="lazy" />
-              <img src="Fotos e Vídeos/lovable-logo.svg" alt="Lovable" loading="lazy" />
-              <img src="Fotos e Vídeos/N8n-logo-new.svg.png" alt="n8n" loading="lazy" />
-              <img src="Fotos e Vídeos/replit-logo_brandlogos.net_afdxm.png" alt="Replit" loading="lazy" />
-              <img src="Fotos e Vídeos/Supabase_Logo.png" alt="Supabase" loading="lazy" />
-              <img src="Fotos e Vídeos/Vercel_logo_2025.svg" alt="Vercel" loading="lazy" />
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -2978,6 +2520,9 @@
           <img class="foot-logo-img" src="logo-branca.png" alt="Kyp" />
         </a>
         <div class="foot-links">
+          <a href="#sobre">Sobre a Kyp</a>
+          <a href="#faq">FAQ</a>
+          <a href="#planos">Planos</a>
           <a href="https://www.linkedin.com/company/kyp-ai/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24">
               <path
@@ -2994,11 +2539,36 @@
           </a>
         </div>
       </div>
-      <p class="foot-copy">© 2025 Kyp. Todos os direitos reservados.</p>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; border-top:1px solid rgba(255,255,255,0.08); padding-top:20px; margin-top:24px;">
+        <p class="foot-copy" style="margin:0;">© 2026 Kyp • CNPJ 68.602.487/0001-16 • Curitiba - PR. Todos os direitos reservados.</p>
+        <div style="display:flex; gap:20px; font-size:0.82rem; color:var(--sub);">
+          <a href="politica-de-privacidade.html" style="color:var(--sub); text-decoration:none;">Política de Privacidade (LGPD)</a>
+          <span>•</span>
+          <a href="termos-de-uso.html" style="color:var(--sub); text-decoration:none;">Termos de Uso</a>
+          <span>•</span>
+          <a href="mailto:contato@kyp.com.br" style="color:var(--sub); text-decoration:none;">contato@kyp.com.br</a>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <!-- LIGHTBOX MODAL PARA MÁXIMA EVIDÊNCIA DE IMAGENS -->
+  <div id="imgModal" class="img-modal" onclick="closeImgModal(event)">
+    <span class="img-modal-close" onclick="closeImgModal(event)">&times;</span>
+    <img class="img-modal-content" id="imgModalTarget" alt="Visualização em alta definição">
+    <div id="imgModalCaption" class="img-modal-caption"></div>
+  </div>
+
+  <!-- SCRIPTS -->
   <script>
+    /* FAQ Accordion Toggle */
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      if (!item) return;
+      item.classList.toggle('active');
+    }
+
     /* Cursor & Glitch Video Effect */
     const cur = document.getElementById('cur');
     let mx = 0, my = 0;
@@ -3009,30 +2579,22 @@
       mx = e.clientX; my = e.clientY;
       cur.style.left = mx + 'px'; cur.style.top = my + 'px';
 
-      // Block glitch when hovering interactive elements or header menu
-      const isHoveringTarget = e.target.closest('a, button, input, textarea, #nav, .pain-item, .n8n-node');
+      const isHoveringTarget = e.target.closest('a, button, input, textarea, select, #nav');
 
-      // Calculate cursor speed for glitch spawning
       if (lastMx !== 0 && lastMy !== 0 && !isHoveringTarget) {
         let dx = mx - lastMx;
         let dy = my - lastMy;
         distAcc += Math.sqrt(dx * dx + dy * dy);
 
-        // Spawn broken video shards when moving
         if (distAcc > 25) {
-          // Limit amount of active shards to maintain 60fps performance
           if (document.querySelectorAll('.glitch-block').length < 18) {
             let numArtifacts = Math.random() > 0.6 ? 2 : 1;
             for (let i = 0; i < numArtifacts; i++) {
               const b = document.createElement('div');
               b.className = 'glitch-block';
-
-              // Shard dimensions (lines or blocks)
               let w = Math.random() * 80 + 10;
               let h = Math.random() * 15 + 2;
-              if (Math.random() > 0.7) { let tmp = w; w = h; h = tmp; } // tall shard
-
-              // Scatter around cursor
+              if (Math.random() > 0.7) { let tmp = w; w = h; h = tmp; }
               let ox = (Math.random() - 0.5) * 50;
               let oy = (Math.random() - 0.5) * 50;
 
@@ -3041,21 +2603,17 @@
               b.style.left = (mx + ox - w / 2) + 'px';
               b.style.top = (my + oy - h / 2) + 'px';
 
-              // Random color shift types (RGB split effect)
               let roll = Math.random();
               if (roll > 0.65) b.classList.add('gb-c');
               else if (roll > 0.3) b.classList.add('gb-m');
 
               glitchContainer.appendChild(b);
 
-              // Regenerate (heal) the video instantly after spawning
               setTimeout(() => {
                 b.style.opacity = '0';
-                // Contract or collapse to simulate digital compression artifacts healing
                 b.style.transform = `scaleY(${Math.random() > 0.5 ? 0.05 : 1}) scaleX(${Math.random() > 0.5 ? 0.05 : 1})`;
               }, 40);
 
-              // Cleanup
               setTimeout(() => b.remove(), 600);
             }
           }
@@ -3065,20 +2623,18 @@
       lastMx = mx; lastMy = my;
     });
 
-    document.querySelectorAll('a, button, .pain-item, .n8n-node').forEach(el => {
+    document.querySelectorAll('a, button, input, select, textarea').forEach(el => {
       el.addEventListener('mouseenter', () => { cur.classList.add('big'); });
       el.addEventListener('mouseleave', () => { cur.classList.remove('big'); });
     });
 
-    /* Navbar */
+    /* Navbar scroll effect */
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => nav.classList.toggle('s', scrollY > 40), { passive: true });
 
-    /* Parallax Hero Background & Overlay */
+    /* Parallax Hero Background */
     const heroBg = document.querySelector('.hero-bg');
     const heroOverlay = document.querySelector('.hero-overlay');
-    const probBgImg = document.querySelector('.prob-bg-img');
-    const probBgMask = document.querySelector('.prob-bg-mask');
     let ticking = false;
     window.addEventListener('scroll', () => {
       if (!ticking) {
@@ -3086,22 +2642,7 @@
           const heroScale = 1.02 + (window.scrollY * 0.00035);
           if (heroBg) {
             heroBg.style.transform = `scale(${heroScale})`;
-            if (heroOverlay) {
-              heroOverlay.style.transform = `scale(${heroScale})`;
-            }
-          }
-          if (probBgImg) {
-            const probSec = document.getElementById('problema');
-            let probScroll = window.scrollY;
-            if (probSec) {
-              // Calculate how many pixels the user has scrolled since the section entered the viewport
-              probScroll = Math.max(0, window.scrollY + window.innerHeight - probSec.offsetTop);
-            }
-            const probScale = 1.02 + (probScroll * 0.00035);
-            probBgImg.style.transform = `scale(${probScale})`;
-            if (probBgMask) {
-              probBgMask.style.transform = `scale(${probScale})`;
-            }
+            if (heroOverlay) heroOverlay.style.transform = `scale(${heroScale})`;
           }
           ticking = false;
         });
@@ -3115,44 +2656,12 @@
     }, { threshold: 0.08 });
     document.querySelectorAll('.fi').forEach(el => obs.observe(el));
 
-    /* Count Up Animation */
-    const countUp = (el) => {
-      const start = parseInt(el.getAttribute('data-start'));
-      const end = parseInt(el.getAttribute('data-end'));
-      const duration = parseInt(el.getAttribute('data-duration'));
-      const provaSec = document.getElementById('prova');
-      let startTime = null;
-
-      const step = (timestamp) => {
-        if (!startTime) startTime = timestamp;
-        const progress = Math.min((timestamp - startTime) / duration, 1);
-        const val = Math.floor(progress * (end - start) + start);
-        el.textContent = val;
-        if (provaSec) provaSec.style.setProperty('--count-text', `"${val}M"`);
-
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        }
-      };
-      requestAnimationFrame(step);
-    };
-
-    const countObs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          countUp(e.target);
-          countObs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    document.querySelectorAll('.count-up').forEach(el => countObs.observe(el));
-
-    /* Hero immediate reveal */
+    /* Hero reveal */
     document.querySelectorAll('#hero .fi').forEach((el, i) => {
       setTimeout(() => el.classList.add('in'), 80 + i * 90);
     });
 
-    /* Form */
+    /* Form submit */
     async function handleSubmit(e) {
       e.preventDefault();
       const form = document.getElementById('contactForm');
@@ -3185,9 +2694,42 @@
     /* Smooth scroll */
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
-        const t = document.querySelector(a.getAttribute('href'));
-        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        const targetId = a.getAttribute('href');
+        const t = document.querySelector(targetId);
+        if (t) {
+          e.preventDefault();
+          t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       });
+    });
+
+    /* Image Lightbox Modal logic */
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('imgModalTarget');
+    const modalCap = document.getElementById('imgModalCaption');
+
+    function openImgModal(imgEl) {
+      if (!modal || !modalImg) return;
+      modalImg.src = imgEl.src;
+      modalCap.textContent = imgEl.alt || 'Visualização da Funcionalidade Kyp';
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeImgModal(e) {
+      if (e && e.target && e.target.classList.contains('img-modal-content')) return;
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.querySelectorAll('.feat-img-zoom, .feat-card-visual img, .kh-shot, .ct-photo').forEach(img => {
+      img.addEventListener('click', () => openImgModal(img));
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeImgModal();
     });
   </script>
 </body>

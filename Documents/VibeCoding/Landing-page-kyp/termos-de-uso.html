@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Termos de Uso — Kyp</title>
+  <meta name="description" content="Termos de Uso e Condições Gerais de Serviço da plataforma Kyp Suíte Integrada de RH." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --c: #00C2CB;
+      --p: #7030E8;
+      --pk: #C020A0;
+      --bg: #090910;
+      --bg2: #0D0D16;
+      --surf: #12121C;
+      --bdr: rgba(255, 255, 255, 0.08);
+      --txt: #EAEAF2;
+      --sub: #8E8EA8;
+      --grad: linear-gradient(135deg, #00C2CB 0%, #7030E8 50%, #C020A0 100%);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--txt);
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+      background-size: 56px 56px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    a {
+      color: var(--c);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
+    /* Header Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: rgba(9, 9, 16, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--bdr);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-w {
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 28px;
+      width: auto;
+      display: block;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--bdr);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .btn-back:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--c);
+      color: var(--c);
+    }
+
+    /* Content Layout */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 120px auto 80px;
+      padding: 0 24px;
+    }
+
+    .legal-card {
+      background: rgba(18, 18, 28, 0.8);
+      border: 1px solid var(--bdr);
+      border-radius: 24px;
+      padding: 48px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 768px) {
+      .legal-card {
+        padding: 28px 20px;
+      }
+    }
+
+    .legal-tag {
+      display: inline-block;
+      background: rgba(112, 48, 232, 0.12);
+      border: 1px solid rgba(112, 48, 232, 0.3);
+      color: #a855f7;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .legal-date {
+      font-size: 0.88rem;
+      color: var(--sub);
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--bdr);
+      padding-bottom: 20px;
+    }
+
+    .legal-body {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .legal-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .legal-section h2::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 20px;
+      background: var(--p);
+      border-radius: 2px;
+    }
+
+    .legal-section p {
+      color: #c4c4d4;
+      margin-bottom: 14px;
+    }
+
+    .legal-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-left: 12px;
+    }
+
+    .legal-section li {
+      color: #d0d0e0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .legal-section li::before {
+      content: '•';
+      color: var(--p);
+      font-weight: bold;
+    }
+
+    .highlight-box {
+      background: rgba(0, 194, 203, 0.06);
+      border: 1px solid rgba(0, 194, 203, 0.25);
+      padding: 20px 24px;
+      border-radius: 16px;
+      margin: 16px 0;
+    }
+
+    .highlight-box p {
+      color: #eaeaf5;
+      margin-bottom: 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--bdr);
+      padding: 36px 24px;
+      text-align: center;
+      color: var(--sub);
+      font-size: 0.85rem;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav-w">
+      <a href="index.html">
+        <img class="logo-img" src="logo-branca.png" alt="Kyp" />
+      </a>
+      <a href="index.html" class="btn-back">
+        ← Voltar ao site
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="legal-card">
+      <span class="legal-tag">Contrato de Licença de Uso SaaS</span>
+      <h1>Termos de Uso e Condições Gerais</h1>
+      <p class="legal-date">Última atualização: Setembro de 2026 • Kyp Tecnologia e IA Ltda. (CNPJ 68.602.487/0001-16)</p>
+
+      <div class="legal-body">
+
+        <div class="legal-section">
+          <h2>1. Aceitação dos Termos</h2>
+          <p>
+            Bem-vindo à <strong>Kyp</strong>. Ao acessar o site, cadastrar-se ou utilizar qualquer um dos módulos da plataforma <strong>Kyp Suíte Integrada de RH</strong> (compreendendo ATS Recrutamento, Admissão Digital, Assinatura Eletrônica, Avaliação Comportamental 5 Eixos, M.A.I.A. e Cargos & Salários), você declara ter lido, compreendido e aceito integralmente estes <strong>Termos de Uso</strong>.
+          </p>
+          <p>
+            Estes termos constituem um contrato vinculante entre a <strong>Kyp Tecnologia e IA Ltda.</strong> (CNPJ 68.602.487/0001-16) e a pessoa física ou jurídica contratante ("Cliente" ou "Usuário").
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>2. Descrição dos Serviços (SaaS)</h2>
+          <p>
+            A Kyp disponibiliza uma plataforma baseada no modelo <em>Software as a Service (SaaS)</em> hospedada em nuvem, destinada à automação e gestão unificada das operações de Recursos Humanos & People:
+          </p>
+          <ul>
+            <li><strong>Recrutamento & Seleção (ATS):</strong> Gestão de vagas, publicação em páginas de carreiras, triagem com Inteligência Artificial e funil Kanban.</li>
+            <li><strong>Admissão Digital:</strong> Envio de propostas de trabalho e coleta digital de documentos do candidato.</li>
+            <li><strong>Assinatura Eletrônica Avançada:</strong> Motor próprio de assinatura de documentos e contratos com trilha de auditoria e hash SHA-256.</li>
+            <li><strong>Avaliação Comportamental (5 Eixos):</strong> Mapeamento de perfil comportamental baseado em Dominância, Influência, Serenidade, Conformidade e Autodomínio.</li>
+            <li><strong>M.A.I.A. (Gemini Live Engine):</strong> Entrevistadora por voz em tempo real que conduz triagens iniciais automatizadas.</li>
+            <li><strong>Cargos, Salários & Governança:</strong> Gestão de permissões de acesso (RBAC) e suporte a grupos multi-empresas com isolamento via RLS.</li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <h2>3. Validade Jurídica da Assinatura Eletrônica</h2>
+          <div class="highlight-box">
+            <p><strong>Conformidade com a Legislação Brasileira (Lei 14.063/2020)</strong></p>
+            <p style="margin-top: 8px; font-size: 0.92rem; color: #d0d0e2;">
+              A assinatura eletrônica disponibilizada pela Kyp é classificada como <strong>Assinatura Eletrônica Avançada</strong>, nos termos da Lei Federal nº 14.063/2020 e da Medida Provisória nº 2.200-2/2001, possuindo plena validade jurídica e eficácia probatória em todo o território nacional. Cada documento assinado gera um certificado de conclusão auditável com carimbo de data/hora e hash criptográfico SHA-256.
+            </p>
+          </div>
+        </div>
+
+        <div class="legal-section">
+          <h2>4. Uso Ético da Inteligência Artificial (LGPD Art. 20)</h2>
+          <p>
+            A Kyp adota o princípio do <strong>Humano no Comando (Human-in-the-loop)</strong> em todas as suas funcionalidades de IA:
+          </p>
+          <ul>
+            <li>A M.A.I.A. e os algoritmos de triagem atuam como ferramentas auxiliares e consultivas de apoio à decisão do recrutador.</li>
+            <li><strong>Decisão Final 100% Humana:</strong> Nenhuma decisão automatizada que produza efeitos jurídicos ou afete significativamente o candidato (como aprovação ou reprovação definitiva) é realizada isoladamente pela IA, em estrita conformidade com o <strong>Artigo 20 da LGPD</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <h2>5. Obrigações e Responsabilidades do Cliente</h2>
+          <p>O Cliente compromete-se a:</p>
+          <ul>
+            <li>Fornecer informações verídicas, exatas e atualizadas no cadastro da empresa e na emissão de contratos.</li>
+            <li>Manter o sigilo e a confidencialidade das credenciais de acesso (login e senha) dos seus gestores e recrutadores.</li>
+            <li>Utilizar a plataforma em estrita conformidade com a legislação trabalhista brasileira (CLT) e com as diretrizes da LGPD.</li>
+            <li>Não utilizar a plataforma para envio de conteúdos ilícitos, discriminatórios, fraudulentos ou maliciosos.</li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <h2>6. Propriedade Intelectual</h2>
+          <p>
+            Todos os direitos de propriedade intelectual relativos à marca Kyp, ao código-fonte, layout, banco de dados, algoritmos proprietários, metodologia dos 5 Eixos Comportamentais e materiais de design são de propriedade exclusiva da Kyp Tecnologia e IA Ltda.
+          </p>
+          <p>
+            É vedada qualquer tentativa de engenharia reversa, descompilação, cópia ou exploração comercial não autorizada da plataforma.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>7. Disponibilidade da Plataforma (SLA) e Suporte</h2>
+          <p>
+            A Kyp envida os melhores esforços para manter a plataforma disponível 24 horas por dia, 7 dias por semana, garantindo uma meta de disponibilidade (SLA) de <strong>99,5%</strong> ao mês, ressalvadas as interrupções programadas para manutenção preventiva ou casos de força maior. O suporte técnico é prestado em português via e-mail e canais oficiais em horário comercial.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>8. Modificações dos Termos e Foro</h2>
+          <p>
+            A Kyp reserva-se o direito de atualizar estes Termos de Uso a qualquer momento para refletir melhorias no sistema ou alterações regulatórias. O uso continuado da plataforma após a publicação das alterações constitui aceitação tácita das novas condições.
+          </p>
+          <p>
+            Estes Termos são regidos pelas leis da República Federativa do Brasil. Para a solução de quaisquer controvérsias oriundas deste contrato, fica eleito o <strong>Foro da Comarca de Curitiba, Estado do Paraná</strong>, com renúncia expressa a qualquer outro, por mais privilegiado que seja.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>9. Contato Corporativo</h2>
+          <p>
+            Para esclarecimentos sobre os Termos de Uso ou contratos corporativos, entre em contato:
+          </p>
+          <p style="color: #fff; font-weight: 500; margin-top: 8px;">
+            📧 E-mail: <a href="mailto:contato@kyp.com.br">contato@kyp.com.br</a><br />
+            🏢 Endereço: Curitiba - PR, Brasil<br />
+            📑 CNPJ: 68.602.487/0001-16
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Kyp Tecnologia e IA Ltda. • CNPJ 68.602.487/0001-16 • Curitiba - PR. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+
+</html>
